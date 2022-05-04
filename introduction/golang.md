@@ -1,72 +1,72 @@
-# GO 快速入门
+# GO 快速入門
 
-## 基本语法
+## 基本文法
 
-[Go 语言圣经](https://books.studygolang.com/gopl-zh/)
+[Go 語言聖經](https://books.studygolang.com/gopl-zh/)
 
-## 常用库
+## 常用庫
 
 ### 切片
 
-go 通过切片模拟栈和队列
+go 通過切片類比棧和隊列
 
-栈
+棧
 
 ```go
-// 创建栈
+// 創建棧
 stack:=make([]int,0)
-// push压入
+// push壓入
 stack=append(stack,10)
-// pop弹出
+// pop彈出
 v:=stack[len(stack)-1]
 stack=stack[:len(stack)-1]
-// 检查栈空
+// 檢查棧空
 len(stack)==0
 ```
 
-队列
+隊列
 
 ```go
-// 创建队列
+// 創建隊列
 queue:=make([]int,0)
-// enqueue入队
+// enqueue入隊
 queue=append(queue,10)
-// dequeue出队
+// dequeue出隊
 v:=queue[0]
 queue=queue[1:]
-// 长度0为空
+// 長度0為空
 len(queue)==0
 ```
 
-注意点
+註意點
 
-- 参数传递，只能修改，不能新增或者删除原始数据
-- 默认 s=s[0:len(s)]，取下限不取上限，数学表示为：[)
+- 參數傳遞，隻能修改，不能新增或者刪除原始數據
+- 預設 s=s[0:len(s)]，取下限不取上限，數學錶示為：[)
 
 ### 字典
 
 基本用法
 
 ```go
-// 创建
+// 創建
 m:=make(map[string]int)
-// 设置kv
+// 設定kv
 m["hello"]=1
-// 删除k
+// 刪除k
 delete(m,"hello")
-// 遍历
+// 遍曆
 for k,v:=range m{
     println(k,v)
 }
 ```
 
-注意点
+註意點
 
-- map 键需要可比较，不能为 slice、map、function
-- map 值都有默认值，可以直接操作默认值，如：m[age]++ 值由 0 变为 1
-- 比较两个 map 需要遍历，其中的 kv 是否相同，因为有默认值关系，所以需要检查 val 和 ok 两个值
+- map 鍵需要可比較，不能為 slice、map、function
+- map 值都有預設值，可以直接操作預設值，如：m[age]++ 值由 0 變為 1
+- 比較兩個 map 需要遍曆，其中的 kv 是否相同，因為有預設值關係，所以需要檢查 val 和 ok 兩個值
 
-### 标准库
+### 標準庫
 
 sort
 
@@ -75,7 +75,7 @@ sort
 sort.Ints([]int{})
 // 字符串排序
 sort.Strings([]string{})
-// 自定义排序
+// 自定義排序
 sort.Slice(s,func(i,j int)bool{return s[i]<s[j]})
 ```
 
@@ -83,9 +83,9 @@ math
 
 ```go
 // int32 最大最小值
-math.MaxInt32 // 实际值：1<<31-1
-math.MinInt32 // 实际值：-1<<31
-// int64 最大最小值（int默认是int64）
+math.MaxInt32 // 實際值：1<<31-1
+math.MinInt32 // 實際值：-1<<31
+// int64 最大最小值（int預設是int64）
 math.MaxInt64
 math.MinInt64
 
@@ -94,36 +94,36 @@ math.MinInt64
 copy
 
 ```go
-// 删除a[i]，可以用 copy 将i+1到末尾的值覆盖到i,然后末尾-1
+// 刪除a[i]，可以用 copy 將i+1到末尾的值覆蓋到i,然後末尾-1
 copy(a[i:],a[i+1:])
 a=a[:len(a)-1]
 
-// make创建长度，则通过索引赋值
+// make創建長度，則通過索引賦值
 a:=make([]int,n)
 a[n]=x
-// make长度为0，则通过append()赋值
+// make長度為0，則通過append()賦值
 a:=make([]int,0)
 a=append(a,x)
 ```
 
 ### 常用技巧
 
-类型转换
+類型轉換
 
 ```go
-// byte转数字
-s="12345"  // s[0] 类型是byte
+// byte轉數字
+s="12345"  // s[0] 類型是byte
 num:=int(s[0]-'0') // 1
 str:=string(s[0]) // "1"
 b:=byte(num+'0') // '1'
 fmt.Printf("%d%s%c\n", num, str, b) // 111
 
-// 字符串转数字
+// 字符串轉數字
 num,_:=strconv.Atoi()
 str:=strconv.Itoa()
 
 ```
 
-## 刷题注意点
+## 刷題註意點
 
-- leetcode 中，全局变量不要当做返回值，否则刷题检查器会报错
+- leetcode 中，全局變數不要當做返回值，否則刷題檢查器會報錯

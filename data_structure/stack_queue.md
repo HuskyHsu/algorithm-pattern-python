@@ -1,22 +1,22 @@
-# 栈和队列
+# 棧和隊列
 
-## 简介
+## 簡介
 
-栈的特点是后入先出
+棧的特點是後入先出
 
 ![image.png](https://img.fuiboom.com/img/stack.png)
 
-根据这个特点可以临时保存一些数据，之后用到依次再弹出来，常用于 DFS 深度搜索
+根據這個特點可以臨時保存一些數據，之後用到依次再彈出來，常用於 DFS 深度搜索
 
-队列一般常用于 BFS 广度搜索，类似一层一层的搜索
+隊列一般常用於 BFS 廣度搜索，類似一層一層的搜索
 
-## Stack 栈
+## Stack 棧
 
-### [min-stack](https://leetcode-cn.com/problems/min-stack/)
+### [min-stack](https://leetcode.com/problems/min-stack/)
 
-> 设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
+> 設計一個支援 push，pop，top 操作，並能在常數時間內檢索到最小元素的棧。
 
-- 思路：用两个栈实现或插入元组实现，保证当前最小值在栈顶即可
+- 思路：用兩個棧實現或插入元組實現，保證當前最小值在棧頂即可
 
 ```Python
 class MinStack:
@@ -40,33 +40,33 @@ class MinStack:
         return self.stack[-1][1]
 ```
 
-### [evaluate-reverse-polish-notation](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)
+### [evaluate-reverse-polish-notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
 
-> **波兰表达式计算** > **输入:** ["2", "1", "+", "3", "*"] > **输出:** 9
-> **解释:** ((2 + 1) \* 3) = 9
+> **波蘭錶達式計算** > **輸入:** ["2", "1", "+", "3", "*"] > **輸出:** 9
+> **解釋:** ((2 + 1) \* 3) = 9
 
-- 思路：通过栈保存原来的元素，遇到表达式弹出运算，再推入结果，重复这个过程
+- 思路：通過棧保存原來的元素，遇到錶達式彈出運算，再推入結果，重複這個過程
 
 ```Python
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        
+
         def comp(or1, op, or2):
             if op == '+':
                 return or1 + or2
-            
+
             if op == '-':
                 return or1 - or2
-            
+
             if op == '*':
                 return or1 * or2
-            
+
             if op == '/':
                 abs_result = abs(or1) // abs(or2)
                 return abs_result if or1 * or2 > 0 else -abs_result
-        
+
         stack = []
-        
+
         for token in tokens:
             if token in ['+', '-', '*', '/']:
                 or2 = stack.pop()
@@ -74,26 +74,26 @@ class Solution:
                 stack.append(comp(or1, token, or2))
             else:
                 stack.append(int(token))
-        
+
         return stack[0]
 ```
 
-### [decode-string](https://leetcode-cn.com/problems/decode-string/)
+### [decode-string](https://leetcode.com/problems/decode-string/)
 
-> 给定一个经过编码的字符串，返回它解码后的字符串。
+> 給定一個經過編碼的字符串，返回它解碼後的字符串。
 > s = "3[a]2[bc]", 返回 "aaabcbc".
 > s = "3[a2[c]]", 返回 "accaccacc".
 > s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".
 
-- 思路：通过两个栈进行操作，一个用于存数，另一个用来存字符串
+- 思路：通過兩個棧進行操作，一個用於存數，另一個用來存字符串
 
 ```Python
 class Solution:
     def decodeString(self, s: str) -> str:
-        
+
         stack_str = ['']
         stack_num = []
-        
+
         num = 0
         for c in s:
             if c >= '0' and c <= '9':
@@ -107,51 +107,51 @@ class Solution:
                 stack_str[-1] += cur_str * stack_num.pop()
             else:
                 stack_str[-1] += c
-        
+
         return stack_str[0]
 ```
 
-### [binary-tree-inorder-traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+### [binary-tree-inorder-traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
-> 给定一个二叉树，返回它的*中序*遍历。
+> 給定一個二叉樹，返回它的*中序*遍曆。
 
 - [reference](https://en.wikipedia.org/wiki/Tree_traversal#In-order)
 
 ```Python
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
-        
+
         stack, inorder = [], []
         node = root
- 
+
         while len(stack) > 0 or node is not None:
-            if node is not None: 
+            if node is not None:
                 stack.append(node)
                 node = node.left
             else:
                 node = stack.pop()
                 inorder.append(node.val)
                 node = node.right
-        
+
         return inorder
 ```
 
-### [clone-graph](https://leetcode-cn.com/problems/clone-graph/)
+### [clone-graph](https://leetcode.com/problems/clone-graph/)
 
-> 给你无向连通图中一个节点的引用，请你返回该图的深拷贝（克隆）。
+> 給你無嚮連通圖中一個節點的引用，請你返回該圖的深拷貝（克隆）。
 
 - BFS
 
 ```Python
 class Solution:
     def cloneGraph(self, start: 'Node') -> 'Node':
-        
+
         if start is None:
             return None
-        
+
         visited = {start: Node(start.val, [])}
         bfs = collections.deque([start])
-        
+
         while len(bfs) > 0:
             curr = bfs.popleft()
             curr_copy = visited[curr]
@@ -160,7 +160,7 @@ class Solution:
                     visited[n] = Node(n.val, [])
                     bfs.append(n)
                 curr_copy.neighbors.append(visited[n])
-        
+
         return visited[start]
 ```
 
@@ -169,16 +169,16 @@ class Solution:
 ```Python
 class Solution:
     def cloneGraph(self, start: 'Node') -> 'Node':
-        
+
         if start is None:
             return None
-        
+
         if not start.neighbors:
             return Node(start.val)
-        
+
         visited = {start: Node(start.val, [])}
         dfs = [start]
-        
+
         while len(dfs) > 0:
             peek = dfs[-1]
             peek_copy = visited[peek]
@@ -190,25 +190,25 @@ class Solution:
                     peek_copy.neighbors.append(visited[n])
             else:
                 dfs.pop()
-        
+
         return visited[start]
 ```
 
-### [number-of-islands](https://leetcode-cn.com/problems/number-of-islands/)
+### [number-of-islands](https://leetcode.com/problems/number-of-islands/)
 
-> 给定一个由  '1'（陆地）和 '0'（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。
+> 給定一個由  '1'（陸地）和 '0'（水）組成的的二維網格，計算島嶼的數量。一個島被水包圍，並且它是通過水準方嚮或垂直方嚮上相鄰的陸地連接而成的。你可以假設網格的四個邊均被水包圍。
 
 High-level problem: number of connected component of graph
 
-- 思路：通过深度搜索遍历可能性（注意标记已访问元素）
+- 思路：通過深度搜索遍曆可能性（註意標記已訪問元素）
 
 ```Python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        
+
         if not grid or not grid[0]:
             return 0
-        
+
         m, n = len(grid), len(grid[0])
 
         def dfs_iter(i, j):
@@ -227,53 +227,53 @@ class Solution:
                     if j + 1 < n:
                         dfs.append((i, j + 1))
             return
-        
+
         num_island = 0
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == '1':
                     num_island += 1
                     dfs_iter(i, j)
-        
+
         return num_island
 ```
 
-### [largest-rectangle-in-histogram](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+### [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
-> 给定 _n_ 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
-> 求在该柱状图中，能够勾勒出来的矩形的最大面积。
+> 給定 _n_ 個非負整數，用來錶示柱狀圖中各個柱子的高度。每個柱子彼此相鄰，且寬度為 1 。
+> 求在該柱狀圖中，能夠勾勒出來的矩形的最大麵積。
 
-- 思路 1：蛮力法，比较每个以 i 开始 j 结束的最大矩形，A(i, j) = (j - i + 1) * min_height(i, j)，时间复杂度 O(n^2) 无法 AC。
+- 思路 1：蠻力法，比較每個以 i 開始 j 結束的最大矩形，A(i, j) = (j - i + 1) \* min_height(i, j)，時間複雜度 O(n^2) 無法 AC。
 
 ```Python
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        
+
         max_area = 0
-        
+
         n = len(heights)
         for i in range(n):
             min_height = heights[i]
             for j in range(i, n):
                 min_height = min(min_height, heights[j])
                 max_area = max(max_area, min_height * (j - i + 1))
-        
+
         return max_area
 ```
 
-- 思路 2: 设 A(i, j) 为区间 [i, j) 内最大矩形的面积，k 为 [i, j) 内最矮 bar 的坐标，则 A(i, j) = max((j - i) * heights[k], A(i, k), A(k+1, j)), 使用分治法进行求解。时间复杂度 O(nlogn)，其中使用简单遍历求最小值无法 AC (最坏情况退化到 O(n^2))，使用线段树优化后勉强 AC。
+- 思路 2: 設 A(i, j) 為區間 [i, j) 內最大矩形的麵積，k 為 [i, j) 內最矮 bar 的坐標，則 A(i, j) = max((j - i) \* heights[k], A(i, k), A(k+1, j)), 使用分治法進行求解。時間複雜度 O(nlogn)，其中使用簡單遍曆求最小值無法 AC (最壞情況退化到 O(n^2))，使用線段樹優化後勉強 AC。
 
 ```Python
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        
+
         n = len(heights)
-        
+
         seg_tree = [None] * n
         seg_tree.extend(list(zip(heights, range(n))))
         for i in range(n - 1, 0, -1):
             seg_tree[i] = min(seg_tree[2 * i], seg_tree[2 * i + 1], key=lambda x: x[0])
-        
+
         def _min(i, j):
             min_ = (heights[i], i)
             i += n
@@ -287,49 +287,49 @@ class Solution:
                     min_ = min(min_, seg_tree[j], key=lambda x: x[0])
                 i //= 2
                 j //= 2
-            
+
             return min_
-        
+
         def LRA(i, j):
             if i == j:
                 return 0
             min_k, k = _min(i, j)
             return max(min_k * (j - i), LRA(k + 1, j), LRA(i, k))
-        
+
         return LRA(0, n)
 ```
 
-- 思路 3：包含当前 bar 最大矩形的边界为左边第一个高度小于当前高度的 bar 和右边第一个高度小于当前高度的 bar。
+- 思路 3：包含當前 bar 最大矩形的邊界為左邊第一個高度小於當前高度的 bar 和右邊第一個高度小於當前高度的 bar。
 
 ```Python
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        
+
         n = len(heights)
-        
+
         stack = [-1]
         max_area = 0
-        
+
         for i in range(n):
             while len(stack) > 1 and heights[stack[-1]] > heights[i]:
                 h = stack.pop()
                 max_area = max(max_area, heights[h] * (i - stack[-1] - 1))
             stack.append(i)
-        
+
         while len(stack) > 1:
             h = stack.pop()
             max_area = max(max_area, heights[h] * (n - stack[-1] - 1))
-        
+
         return max_area
 ```
 
-## Queue 队列
+## Queue 隊列
 
-常用于 BFS 宽度优先搜索
+常用於 BFS 寬度優先搜索
 
-### [implement-queue-using-stacks](https://leetcode-cn.com/problems/implement-queue-using-stacks/)
+### [implement-queue-using-stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 
-> 使用栈实现队列
+> 使用棧實現隊列
 
 ```Python
 class MyQueue:
@@ -352,7 +352,7 @@ class MyQueue:
             while len(self.cache) > 0:
                 self.out.append(self.cache.pop())
 
-        return self.out.pop() 
+        return self.out.pop()
 
     def peek(self) -> int:
         """
@@ -370,53 +370,53 @@ class MyQueue:
         return len(self.cache) == 0 and len(self.out) == 0
 ```
 
-### [binary-tree-level-order-traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+### [binary-tree-level-order-traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
-> 二叉树的层序遍历
+> 二叉樹的層序遍曆
 
 ```Python
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        
+
         levels = []
         if root is None:
             return levels
-        
+
         bfs = collections.deque([root])
-        
+
         while len(bfs) > 0:
             levels.append([])
-            
+
             level_size = len(bfs)
             for _ in range(level_size):
                 node = bfs.popleft()
                 levels[-1].append(node.val)
-                
+
                 if node.left is not None:
                     bfs.append(node.left)
                 if node.right is not None:
                     bfs.append(node.right)
-        
+
         return levels
 ```
 
-### [01-matrix](https://leetcode-cn.com/problems/01-matrix/)
+### [01-matrix](https://leetcode.com/problems/01-matrix/)
 
-> 给定一个由 0 和 1 组成的矩阵，找出每个元素到最近的 0 的距离。
-> 两个相邻元素间的距离为 1
+> 給定一個由 0 和 1 組成的矩陣，找出每個元素到最近的 0 的距離。
+> 兩個相鄰元素間的距離為 1
 
-- 思路 1: 从 0 开始 BFS, 遇到距离最小值需要更新的则更新后重新入队更新后续结点
+- 思路 1: 從 0 開始 BFS, 遇到距離最小值需要更新的則更新後重新入隊更新後續結點
 
 ```Python
 class Solution:
     def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
-        
+
         if len(matrix) == 0 or len(matrix[0]) == 0:
             return matrix
-        
+
         m, n = len(matrix), len(matrix[0])
         dist = [[float('inf')] * n for _ in range(m)]
-        
+
         bfs = collections.deque([])
         for i in range(m):
             for j in range(n):
@@ -433,8 +433,8 @@ class Solution:
                     if dist[n_i][n_j] > dist[i][j] + 1:
                         dist[n_i][n_j] = dist[i][j] + 1
                         bfs.append((n_i, n_j))
-        
-        return dist        
+
+        return dist
 ```
 
 - 思路 2: 2-pass DP，dist(i, j) = max{dist(i - 1, j), dist(i + 1, j), dist(i, j - 1), dist(i, j + 1)} + 1
@@ -442,14 +442,14 @@ class Solution:
 ```Python
 class Solution:
     def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
-        
+
         if len(matrix) == 0 or len(matrix[0]) == 0:
             return matrix
-        
+
         m, n = len(matrix), len(matrix[0])
-        
+
         dist = [[float('inf')] * n for _ in range(m)]
-        
+
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == 1:
@@ -459,7 +459,7 @@ class Solution:
                         dist[i][j] = min(dist[i][j - 1] + 1, dist[i][j])
                 else:
                     dist[i][j] = 0
-        
+
         for i in range(-1, -m - 1, -1):
             for j in range(-1, -n - 1, -1):
                 if matrix[i][j] == 1:
@@ -467,15 +467,15 @@ class Solution:
                         dist[i][j] = min(dist[i + 1][j] + 1, dist[i][j])
                     if j + 1 < 0:
                         dist[i][j] = min(dist[i][j + 1] + 1, dist[i][j])
-        
+
         return dist
 ```
 
-## 补充：单调栈
+## 補充：單調棧
 
-顾名思义，单调栈即是栈中元素有单调性的栈，典型应用为用线性的时间复杂度找左右两侧第一个大于/小于当前元素的位置。
+顧名思義，單調棧即是棧中元素有單調性的棧，典型應用為用線性的時間複雜度找左右兩側第一個大於/小於當前元素的位置。
 
-### [largest-rectangle-in-histogram](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+### [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
 ```Python
 class Solution:
@@ -491,15 +491,15 @@ class Solution:
         return result
 ```
 
-### [trapping-rain-water](https://leetcode-cn.com/problems/trapping-rain-water/)
+### [trapping-rain-water](https://leetcode.com/problems/trapping-rain-water/)
 
 ```Python
 class Solution:
     def trap(self, height: List[int]) -> int:
-        
+
         stack = []
         result = 0
-        
+
         for i in range(len(height)):
             while stack and height[i] > height[stack[-1]]:
                 cur = stack.pop()
@@ -507,49 +507,49 @@ class Solution:
                     break
                 result += (min(height[stack[-1]], height[i]) - height[cur]) * (i - stack[-1] - 1)
             stack.append(i)
-        
+
         return result
 ```
 
-## 补充：单调队列
+## 補充：單調隊列
 
-单调栈的拓展，可以从数组头 pop 出旧元素，典型应用是以线性时间获得区间最大/最小值。
+單調棧的拓展，可以從數組頭 pop 出舊元素，典型應用是以線性時間獲得區間最大/最小值。
 
-### [sliding-window-maximum](https://leetcode-cn.com/problems/sliding-window-maximum/)
+### [sliding-window-maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
-> 求滑动窗口中的最大元素
+> 求滑動視窗中的最大元素
 
 ```Python
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        
+
         N = len(nums)
         if N * k == 0:
             return []
-        
+
         if k == 1:
             return nums[:]
-        
+
         # define a max queue
         maxQ = collections.deque()
-        
+
         result = []
         for i in range(N):
             if maxQ and maxQ[0] == i - k:
                 maxQ.popleft()
-            
+
             while maxQ and nums[maxQ[-1]] < nums[i]:
                 maxQ.pop()
-            
+
             maxQ.append(i)
-            
+
             if i >= k - 1:
                 result.append(nums[maxQ[0]])
-        
+
         return result
 ```
 
-### [shortest-subarray-with-sum-at-least-k](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/)
+### [shortest-subarray-with-sum-at-least-k](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
 
 ```Python
 class Solution:
@@ -561,9 +561,9 @@ class Solution:
 
         result = N + 1
         minQ = collections.deque()
-        
+
         for i, csum in enumerate(cdf):
-            
+
             while minQ and csum <= cdf[minQ[-1]]:
                 minQ.pop()
 
@@ -572,25 +572,25 @@ class Solution:
 
             minQ.append(i)
 
-        return result if result < N + 1 else -1 
+        return result if result < N + 1 else -1
 ```
 
-## 总结
+## 總結
 
-- 熟悉栈的使用场景
-  - 后入先出，保存临时值
-  - 利用栈 DFS 深度搜索
-- 熟悉队列的使用场景
-  - 利用队列 BFS 广度搜索
+- 熟悉棧的使用場景
+  - 後入先出，保存臨時值
+  - 利用棧 DFS 深度搜索
+- 熟悉隊列的使用場景
+  - 利用隊列 BFS 廣度搜索
 
-## 练习
+## 練習
 
-- [ ] [min-stack](https://leetcode-cn.com/problems/min-stack/)
-- [ ] [evaluate-reverse-polish-notation](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)
-- [ ] [decode-string](https://leetcode-cn.com/problems/decode-string/)
-- [ ] [binary-tree-inorder-traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
-- [ ] [clone-graph](https://leetcode-cn.com/problems/clone-graph/)
-- [ ] [number-of-islands](https://leetcode-cn.com/problems/number-of-islands/)
-- [ ] [largest-rectangle-in-histogram](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
-- [ ] [implement-queue-using-stacks](https://leetcode-cn.com/problems/implement-queue-using-stacks/)
-- [ ] [01-matrix](https://leetcode-cn.com/problems/01-matrix/)
+- [ ] [min-stack](https://leetcode.com/problems/min-stack/)
+- [ ] [evaluate-reverse-polish-notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
+- [ ] [decode-string](https://leetcode.com/problems/decode-string/)
+- [ ] [binary-tree-inorder-traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- [ ] [clone-graph](https://leetcode.com/problems/clone-graph/)
+- [ ] [number-of-islands](https://leetcode.com/problems/number-of-islands/)
+- [ ] [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+- [ ] [implement-queue-using-stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
+- [ ] [01-matrix](https://leetcode.com/problems/01-matrix/)

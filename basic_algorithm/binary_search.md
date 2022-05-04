@@ -1,27 +1,27 @@
 # 二分搜索
 
-给一个**有序数组**和目标值，找第一次/最后一次/任何一次出现的索引，时间复杂度 O(logN)。
+給一個**有序數組**和目標值，找第一次/最後一次/任何一次出現的索引，時間複雜度 O(logN)。
 
-## 模板
+## 模闆
 
-常用的二分搜索模板有如下三种形式：
+常用的二分搜索模闆有如下三種形式：
 
 ![binary_search_template](https://img.fuiboom.com/img/binary_search_template.png)
 
-其中，模板 1 和 3 是最常用的，几乎所有二分查找问题都可以用其中之一轻松实现。模板 2 更高级一些，用于解决某些类型的问题。详细的对比可以参考 Leetcode 上的文章：[二分搜索模板](https://leetcode-cn.com/explore/learn/card/binary-search/212/template-analysis/847/)。
+其中，模闆 1 和 3 是最常用的，幾乎所有二分查找問題都可以用其中之一輕鬆實現。模闆 2 更高級一些，用於解決某些類型的問題。詳細的對比可以參考 Leetcode 上的文章：[二分搜索模闆](https://leetcode.com/explore/learn/card/binary-search/212/template-analysis/847/)。
 
-### [binary-search](https://leetcode-cn.com/problems/binary-search/)
+### [binary-search](https://leetcode.com/problems/binary-search/)
 
-> 给定一个  n  个元素有序的（升序）整型数组  nums 和一个目标值  target  ，写一个函数搜索  nums  中的 target，如果目标值存在返回下标，否则返回 -1。
+> 給定一個  n  個元素有序的（升序）整型數組  nums 和一個目標值  target  ，寫一個函數搜索  nums  中的 target，如果目標值存在返回下標，否則返回 -1。
 
-- 模板 3 的实现
+- 模闆 3 的實現
 
 ```Python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        
+
         l, r = 0, len(nums) - 1
-        
+
         while l + 1 < r:
             mid = l + (r - l) // 2
             if nums[mid] < target:
@@ -37,14 +37,14 @@ class Solution:
             return -1
 ```
 
-- 如果是最简单的二分搜索，不需要找第一个、最后一个位置，或者是没有重复元素，可以使用模板 1，代码更简洁。同时，如果搜索失败，left 是第一个大于 target 的索引，right 是最后一个小于 target 的索引。
+- 如果是最簡單的二分搜索，不需要找第一個、最後一個位置，或者是冇有重複元素，可以使用模闆 1，代碼更簡潔。同時，如果搜索失敗，left 是第一個大於 target 的索引，right 是最後一個小於 target 的索引。
 
 ```Python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        
+
         l, r = 0, len(nums) - 1
-        
+
         while l <= r:
             mid = l + (r - l) // 2
             if nums[mid] == target:
@@ -53,18 +53,18 @@ class Solution:
                 r = mid - 1
             else:
                 l = mid + 1
-        
+
         return -1
 ```
 
-- 模板 2 的实现
+- 模闆 2 的實現
 
 ```Python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        
+
         l, r = 0, len(nums) - 1
-        
+
         while l < r:
             mid = l + (r - l) // 2
             if nums[mid] < target:
@@ -74,17 +74,17 @@ class Solution:
 
         if nums[l] == target:
             return l
-        
+
         return -1
 ```
 
-## 常见题目
+## 常見題目
 
-### [find-first-and-last-position-of-element-in-sorted-array](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+### [find-first-and-last-position-of-element-in-sorted-array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
-> 给定一个包含 n 个整数的排序数组，找出给定目标值 target 的起始和结束位置。如果目标值不在数组中，则返回`[-1, -1]`
+> 給定一個包含 n 個整數的排序數組，找出給定目標值 target 的起始和結束位置。如果目標值不在數組中，則返回`[-1, -1]`
 
-- 思路：核心点就是找第一个 target 的索引，和最后一个 target 的索引，所以用两次二分搜索分别找第一次和最后一次的位置，下面是使用模板 3 的解法
+- 思路：核心點就是找第一個 target 的索引，和最後一個 target 的索引，所以用兩次二分搜索分別找第一次和最後一次的位置，下麵是使用模闆 3 的解法
 
 ```Python
 class Solution:
@@ -100,14 +100,14 @@ class Solution:
                 l = mid
             else:
                 r = mid
-        
+
         if nums[l] == target:
             Range[0] = l
         elif nums[r] == target:
             Range[0] = r
         else:
             return Range
-        
+
         l, r = 0, len(nums) - 1
         while l + 1 < r:
             mid = l + (r - l) // 2
@@ -115,16 +115,16 @@ class Solution:
                 l = mid
             else:
                 r = mid
-        
+
         if nums[r] == target:
             Range[1] = r
         else:
             Range[1] = l
-        
+
         return Range
 ```
 
-- 使用模板 2 的解法
+- 使用模闆 2 的解法
 
 ```Python
 class Solution:
@@ -132,7 +132,7 @@ class Solution:
         Range = [-1, -1]
         if len(nums) == 0:
             return Range
-        
+
         l, r = 0, len(nums) - 1
         while l < r:
             mid = l + (r - l) // 2
@@ -144,8 +144,8 @@ class Solution:
         if nums[l] == target:
             Range[0] = l
         else:
-            return Range 
-        
+            return Range
+
         l, r = 0, len(nums) - 1
         while l < r:
             mid = l + (r - l + 1) // 2
@@ -153,23 +153,23 @@ class Solution:
                 r = mid - 1
             else:
                 l = mid
-            
+
         Range[1] = l
         return Range
 ```
 
-### [search-insert-position](https://leetcode-cn.com/problems/search-insert-position/)
+### [search-insert-position](https://leetcode.com/problems/search-insert-position/)
 
-> 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+> 給定一個排序數組和一個目標值，在數組中找到目標值，並返回其索引。如果目標值不存在於數組中，返回它將會被按順序插入的位置。
 
-- 使用模板 1，若不存在，左边界为第一个大于目标值的索引（插入位置），右边界为最后一个小于目标值的索引
+- 使用模闆 1，若不存在，左邊界為第一個大於目標值的索引（插入位置），右邊界為最後一個小於目標值的索引
 
 ```Python
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        
+
         l, r = 0, len(nums) - 1
-        
+
         while l <= r:
             mid = l + (r - l) // 2
             if nums[mid] == target:
@@ -178,29 +178,29 @@ class Solution:
                 r = mid - 1
             else:
                 l = mid + 1
-        
+
         return l
 ```
 
-### [search-a-2d-matrix](https://leetcode-cn.com/problems/search-a-2d-matrix/)
+### [search-a-2d-matrix](https://leetcode.com/problems/search-a-2d-matrix/)
 
-> 编写一个高效的算法来判断  m x n  矩阵中，是否存在一个目标值。该矩阵具有如下特性：
+> 編寫一個高效的算法來判斷  m x n  矩陣中，是否存在一個目標值。該矩陣具有如下特性：
 >
-> 1. 每行中的整数从左到右按升序排列。
+> 1. 每行中的整數從左到右按升序排列。
 >
-> 2. 每行的第一个整数大于前一行的最后一个整数。
+> 2. 每行的第一個整數大於前一行的最後一個整數。
 
-- 两次二分，首先定位行数，接着定位列数
+- 兩次二分，首先定位行數，接著定位列數
 
 ```Python
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        
+
         if len(matrix) == 0 or len(matrix[0]) == 0:
             return False
-        
+
         l, r = 0, len(matrix) - 1
-        
+
         while l <= r:
             mid = l + (r - l) // 2
             if matrix[mid][0] == target:
@@ -209,7 +209,7 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid - 1
-        
+
         row = r
         l, r = 0, len(matrix[0]) - 1
         while l <= r:
@@ -220,42 +220,42 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid - 1
-        
+
         return False
 ```
 
-### [find-minimum-in-rotated-sorted-array](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+### [find-minimum-in-rotated-sorted-array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
-> 假设按照升序排序的数组在预先未知的某个点上进行了旋转，例如，数组 [0, 1, 2, 4, 5, 6, 7] 可能变为 [4, 5, 6, 7, 0, 1, 2]。请找出其中最小的元素。假设数组中无重复元素。
+> 假設按照升序排序的數組在預先未知的某個點上進行了旋轉，例如，數組 [0, 1, 2, 4, 5, 6, 7] 可能變為 [4, 5, 6, 7, 0, 1, 2]。請找出其中最小的元素。假設數組中無重複元素。
 
-- 使用二分搜索，当中间元素大于右侧元素时意味着拐点即最小元素在右侧，否则在左侧
+- 使用二分搜索，當中間元素大於右側元素時意味著拐點即最小元素在右側，否則在左側
 
 ```Python
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        
+
         l , r = 0, len(nums) - 1
-        
+
         while l < r:
             mid = l + (r - l) // 2
-            if nums[mid] > nums[r]: # 数组有重复时，若 nums[l] == nums[mid] == nums[r]，无法判断移动方向
+            if nums[mid] > nums[r]: # 數組有重複時，若 nums[l] == nums[mid] == nums[r]，無法判斷移動方嚮
                 l = mid + 1
             else:
                 r = mid
-        
+
         return nums[l]
 ```
 
-### [find-minimum-in-rotated-sorted-array-ii](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+### [find-minimum-in-rotated-sorted-array-ii](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
 
-> 假设按照升序排序的数组在预先未知的某个点上进行了旋转，例如，数组 [0, 1, 2, 4, 5, 6, 7] 可能变为 [4, 5, 6, 7, 0, 1, 2]。请找出其中最小的元素。数组中可能包含重复元素。
+> 假設按照升序排序的數組在預先未知的某個點上進行了旋轉，例如，數組 [0, 1, 2, 4, 5, 6, 7] 可能變為 [4, 5, 6, 7, 0, 1, 2]。請找出其中最小的元素。數組中可能包含重複元素。
 
 ```Python
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        
+
         l , r = 0, len(nums) - 1
-        
+
         while l < r:
             mid = l + (r - l) // 2
             if nums[mid] > nums[r]:
@@ -264,20 +264,20 @@ class Solution:
                 r = mid
             else: # nums[l] == nums[mid] == nums[r]
                 l += 1
-        
+
         return nums[l]
 ```
 
-### [search-in-rotated-sorted-array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
+### [search-in-rotated-sorted-array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
-> 假设按照升序排序的数组在预先未知的某个点上进行了旋转，例如，数组 [0, 1, 2, 4, 5, 6, 7] 可能变为 [4, 5, 6, 7, 0, 1, 2]。搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回  -1。假设数组中不存在重复的元素。
+> 假設按照升序排序的數組在預先未知的某個點上進行了旋轉，例如，數組 [0, 1, 2, 4, 5, 6, 7] 可能變為 [4, 5, 6, 7, 0, 1, 2]。搜索一個給定的目標值，如果數組中存在這個目標值，則返回它的索引，否則返回  -1。假設數組中不存在重複的元素。
 
 ```Python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        
+
         l , r = 0, len(nums) - 1
-        
+
         while l <= r:
             mid = l + (r - l) // 2
             if nums[mid] == target:
@@ -295,16 +295,16 @@ class Solution:
         return -1
 ```
 
-### [search-in-rotated-sorted-array-ii](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)
+### [search-in-rotated-sorted-array-ii](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
 
-> 假设按照升序排序的数组在预先未知的某个点上进行了旋转，例如，数组 [0, 0, 1, 2, 2, 5, 6] 可能变为 [2, 5, 6, 0, 0, 1, 2]。编写一个函数来判断给定的目标值是否存在于数组中，若存在返回  true，否则返回  false。数组中可能包含重复元素。
+> 假設按照升序排序的數組在預先未知的某個點上進行了旋轉，例如，數組 [0, 0, 1, 2, 2, 5, 6] 可能變為 [2, 5, 6, 0, 0, 1, 2]。編寫一個函數來判斷給定的目標值是否存在於數組中，若存在返回  true，否則返回  false。數組中可能包含重複元素。
 
 ```Python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        
+
         l , r = 0, len(nums) - 1
-        
+
         while l <= r:
             if nums[l] == nums[r] and nums[l] != target:
                 l += 1
@@ -326,44 +326,44 @@ class Solution:
         return False
 ```
 
-## 隐含的二分搜索
+## 隱含的二分搜索
 
-有时用到二分搜索的题目并不会直接给你一个有序数组，它隐含在题目中，需要你去发现或者构造。一类常见的隐含的二分搜索的问题是求某个有界数据的最值，以最小值为例，当数据比最小值大时都符合条件，比最小值小时都不符合条件，那么符合/不符合条件就构成了一种有序关系，再加上数据有界，我们就可以使用二分搜索来找数据的最小值。注意，数据的界一般也不会在题目中明确提示你，需要你自己去发现。
+有時用到二分搜索的題目並不會直接給你一個有序數組，它隱含在題目中，需要你去發現或者構造。一類常見的隱含的二分搜索的問題是求某個有界數據的最值，以最小值為例，當數據比最小值大時都符合條件，比最小值小時都不符合條件，那麼符合/不符合條件就構成了一種有序關係，再加上數據有界，我們就可以使用二分搜索來找數據的最小值。註意，數據的界一般也不會在題目中明確提示你，需要你自己去發現。
 
-### [koko-eating-bananas](https://leetcode-cn.com/problems/koko-eating-bananas/)
+### [koko-eating-bananas](https://leetcode.com/problems/koko-eating-bananas/)
 
 ```Python
 class Solution:
     def minEatingSpeed(self, piles: List[int], H: int) -> int:
-        
+
         l, r = 1, max(piles)
-        
+
         while l < r:
             mid = l + (r - l) // 2
             if sum([-pile // mid for pile in piles]) < -H:
                 l = mid + 1
             else:
                 r = mid
-        
+
         return l
 ```
 
-## 总结
+## 總結
 
-二分搜索核心四点要素（必背&理解）
+二分搜索核心四點要素（必背&理解）
 
 - 1、初始化：start=0、end=len-1
-- 2、循环退出条件：start + 1 < end
-- 3、比较中点和目标值：A[mid] ==、 <、> target
-- 4、判断最后两个元素是否符合：A[start]、A[end] ? target
+- 2、循環退出條件：start + 1 < end
+- 3、比較中點和目標值：A[mid] ==、 <、> target
+- 4、判斷最後兩個元素是否符合：A[start]、A[end] ? target
 
-## 练习题
+## 練習題
 
 - [ ] [search-for-range](https://www.lintcode.com/problem/search-for-a-range/description)
-- [ ] [search-insert-position](https://leetcode-cn.com/problems/search-insert-position/)
-- [ ] [search-a-2d-matrix](https://leetcode-cn.com/problems/search-a-2d-matrix/)
-- [ ] [first-bad-version](https://leetcode-cn.com/problems/first-bad-version/)
-- [ ] [find-minimum-in-rotated-sorted-array](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
-- [ ] [find-minimum-in-rotated-sorted-array-ii](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
-- [ ] [search-in-rotated-sorted-array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
-- [ ] [search-in-rotated-sorted-array-ii](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)
+- [ ] [search-insert-position](https://leetcode.com/problems/search-insert-position/)
+- [ ] [search-a-2d-matrix](https://leetcode.com/problems/search-a-2d-matrix/)
+- [ ] [first-bad-version](https://leetcode.com/problems/first-bad-version/)
+- [ ] [find-minimum-in-rotated-sorted-array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [ ] [find-minimum-in-rotated-sorted-array-ii](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+- [ ] [search-in-rotated-sorted-array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [ ] [search-in-rotated-sorted-array-ii](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)

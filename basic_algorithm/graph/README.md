@@ -1,14 +1,13 @@
-# 图相关算法
+# 圖相關算法
 
-图 (graph) 是一种相当复杂的数据结构，相关算法也多种多样，以下总结一些比较基础且常见的图算法。
+圖 (graph) 是一種相當複雜的數據結構，相關算法也多種多樣，以下總結一些比較基礎且常見的圖算法。
 
-### [深度优先搜索，广度优先搜索](./bfs_dfs.md)
+### [深度優先搜索，廣度優先搜索](./bfs_dfs.md)
 
-### [拓扑排序](./topological_sorting.md)
+### [拓撲排序](./topological_sorting.md)
 
-### [最小生成树](./mst.md)
+### [最小生成樹](./mst.md)
 
-### [最短路径](./shortest_path.md)
+### [最短路徑](./shortest_path.md)
 
-### [图的表示](./graph_representation.md)
-
+### [圖的錶示](./graph_representation.md)
