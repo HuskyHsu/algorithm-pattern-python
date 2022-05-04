@@ -1,8 +1,8 @@
-# 遞歸
+# 遞迴
 
 ## 介紹
 
-將大問題轉化為小問題，通過遞歸依次解決各個小問題
+將大問題轉化為小問題，通過遞迴依次解決各個小問題
 
 ## 示例
 
@@ -30,7 +30,7 @@ class Solution:
 
 ### [swap-nodes-in-pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 
-> 給定一個鏈錶，兩兩交換其中相鄰的節點，並返回交換後的鏈錶。
+> 給定一個鏈結串列，兩兩交換其中相鄰的節點，並返回交換後的鏈結串列。
 > **你不能隻是單純的改變節點內部的值**，而是需要實際的進行節點交換。
 
 ```Python
@@ -49,9 +49,9 @@ class Solution:
 
 ### [unique-binary-search-trees-ii](https://leetcode.com/problems/unique-binary-search-trees-ii/)
 
-> 給定一個整數 n，生成所有由 1 ... n 為節點所組成的二叉搜索樹。
+> 給定一個整數 n，生成所有由 1 ... n 為節點所組成的二元搜尋樹。
 
-註意：此題用來訓練遞歸思維有理論意義，但是實際上算法返回的樹並不是 deep copy，多個樹之間會共享子樹。
+註意：此題用來訓練遞迴思維有理論意義，但是實際上算法返回的樹並不是 deep copy，多個樹之間會共享子樹。
 
 ```Python
 class Solution:
@@ -76,7 +76,7 @@ class Solution:
         return generateTrees_rec(1, n) if n > 0 else []
 ```
 
-## 遞歸 + 備忘錄 (recursion with memorization, top-down DP)
+## 遞迴 + 備忘錄 (recursion with memorization, top-down DP)
 
 ### [fibonacci-number](https://leetcode.com/problems/fibonacci-number/)
 

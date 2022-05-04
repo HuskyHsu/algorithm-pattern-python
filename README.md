@@ -1,6 +1,6 @@
 # 說明
 
-本項目為原項目 [algorithm-pattern](https://github.com/greyireland/algorithm-pattern) 的 Python3 語言實現版本，原項目使用 go 語言實現，目前已獲 ![GitHub stars](https://img.shields.io/github/stars/greyireland/algorithm-pattern?style=social)。在原項目基礎上，本項目添加了優先級隊列，並查集，圖相關算法等內容，基本覆蓋了所有基礎數據結構和算法，非常適合找工刷題的同學快速上手。以下為原項目 README，目錄部分增加了本項目的新內容。
+本項目為原項目 [algorithm-pattern](https://github.com/greyireland/algorithm-pattern) 的 Python3 語言實現版本，原項目使用 go 語言實現，目前已獲 ![GitHub stars](https://img.shields.io/github/stars/greyireland/algorithm-pattern?style=social)。在原項目基礎上，本項目添加了優先級隊列，併查集，圖相關算法等內容，基本覆蓋了所有基礎數據結構和算法，非常適合找工刷題的同學快速上手。以下為原項目 README，目錄部分增加了本項目的新內容。
 
 # 算法模板
 
@@ -25,25 +25,25 @@
 
 ### 數據結構篇 🐰
 
-- [二叉樹](./data_structure/binary_tree.md)
-- [鏈錶](./data_structure/linked_list.md)
-- [棧和隊列](./data_structure/stack_queue.md)
-- [優先級隊列 (堆)](./data_structure/heap.md)
-- [並查集](./data_structure/union_find.md)
-- [二進製](./data_structure/binary_op.md)
+- [二元樹](./data_structure/binary_tree.md)
+- [鏈結串列](./data_structure/linked_list.md)
+- [堆疊與佇列](./data_structure/stack_queue.md)
+- [堆積](./data_structure/heap.md)
+- [併查集](./data_structure/union_find.md)
+- [二進位](./data_structure/binary_op.md)
 
 ### 基礎算法篇 🐮
 
-- [二分搜索](./basic_algorithm/binary_search.md)
+- [二分搜尋](./basic_algorithm/binary_search.md)
 - [排序算法](./basic_algorithm/sort.md)
 - [動態規劃](./basic_algorithm/dp.md)
 - [圖相關算法](./basic_algorithm/graph/)
 
 ### 算法思維 🦁
 
-- [遞歸思維](./advanced_algorithm/recursion.md)
+- [遞迴思維](./advanced_algorithm/recursion.md)
 - [滑動視窗思想](./advanced_algorithm/slide_window.md)
-- [二叉搜索樹](./advanced_algorithm/binary_search_tree.md)
+- [二元搜尋樹](./advanced_algorithm/binary_search_tree.md)
 - [回溯法](./advanced_algorithm/backtrack.md)
 
 ## 心得體會

@@ -1,23 +1,23 @@
-# 鏈錶
+# 鏈結串列
 
 ## 基本技能
 
-鏈錶相關的核心點
+鏈結串列相關的核心點
 
 - null/nil 異常處理
 - dummy node 啞巴節點
 - 快慢指針
-- 插入一個節點到排序鏈錶
-- 從一個鏈錶中移除一個節點
-- 翻轉鏈錶
-- 合並兩個鏈錶
-- 找到鏈錶的中間節點
+- 插入一個節點到排序鏈結串列
+- 從一個鏈結串列中移除一個節點
+- 翻轉鏈結串列
+- 合並兩個鏈結串列
+- 找到鏈結串列的中間節點
 
 ## 常見題型
 
 ### [remove-duplicates-from-sorted-list](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
-> 給定一個排序鏈錶，刪除所有重複的元素，使得每個元素隻出現一次。
+> 給定一個排序鏈結串列，刪除所有重複的元素，使得每個元素隻出現一次。
 
 ```Python
 class Solution:
@@ -39,9 +39,9 @@ class Solution:
 
 ### [remove-duplicates-from-sorted-list-ii](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 
-> 給定一個排序鏈錶，刪除所有含有重複數字的節點，隻保留原始鏈錶中   冇有重複出現的數字。
+> 給定一個排序鏈結串列，刪除所有含有重複數字的節點，隻保留原始鏈結串列中   冇有重複出現的數字。
 
-- 思路：鏈錶頭結點可能被刪除，所以用 dummy node 輔助刪除
+- 思路：鏈結串列頭結點可能被刪除，所以用 dummy node 輔助刪除
 
 ```Python
 class Solution:
@@ -79,7 +79,7 @@ class Solution:
 
 ### [reverse-linked-list](https://leetcode.com/problems/reverse-linked-list/)
 
-> 反轉一個單鏈錶。
+> 反轉一個單鏈結串列。
 
 - 思路：將當前結點放置到頭結點
 
@@ -119,7 +119,7 @@ class Solution:
 
 ### [reverse-linked-list-ii](https://leetcode.com/problems/reverse-linked-list-ii/)
 
-> 反轉從位置  *m*  到  *n*  的鏈錶。請使用一趟掃描完成反轉。
+> 反轉從位置  *m*  到  *n*  的鏈結串列。請使用一趟掃描完成反轉。
 
 - 思路：先找到 m 處, 再反轉 n - m 次即可
 
@@ -149,9 +149,9 @@ class Solution:
 
 ### [merge-two-sorted-lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 
-> 將兩個升序鏈錶合並為一個新的升序鏈錶並返回。新鏈錶是通過拚接給定的兩個鏈錶的所有節點組成的。
+> 將兩個升序鏈結串列合並為一個新的升序鏈結串列並返回。新鏈結串列是通過拚接給定的兩個鏈結串列的所有節點組成的。
 
-- 思路：通過 dummy node 鏈錶，連接各個元素
+- 思路：通過 dummy node 鏈結串列，連接各個元素
 
 ```Python
 class Solution:
@@ -177,9 +177,9 @@ class Solution:
 
 ### [partition-list](https://leetcode.com/problems/partition-list/)
 
-> 給定一個鏈錶和一個特定值 x，對鏈錶進行分隔，使得所有小於  *x*  的節點都在大於或等於  *x*  的節點之前。
+> 給定一個鏈結串列和一個特定值 x，對鏈結串列進行分隔，使得所有小於  *x*  的節點都在大於或等於  *x*  的節點之前。
 
-- 思路：將大於 x 的節點，放到另外一個鏈錶，最後連接這兩個鏈錶
+- 思路：將大於 x 的節點，放到另外一個鏈結串列，最後連接這兩個鏈結串列
 
 ```go
 class Solution:
@@ -208,7 +208,7 @@ class Solution:
 
 ### [sort-list](https://leetcode.com/problems/sort-list/)
 
-> 在  *O*(*n* log *n*) 時間複雜度和常數級空間複雜度下，對鏈錶進行排序。
+> 在  *O*(*n* log *n*) 時間複雜度和常數級空間複雜度下，對鏈結串列進行排序。
 
 - 思路：歸並排序，slow-fast 找中點
 
@@ -256,15 +256,15 @@ class Solution:
 註意點
 
 - 快慢指針 判斷 fast 及 fast.Next 是否為 nil 值
-- 遞歸 mergeSort 需要斷開中間節點
-- 遞歸返回條件為 head 為 nil 或者 head.Next 為 nil
+- 遞迴 mergeSort 需要斷開中間節點
+- 遞迴返回條件為 head 為 nil 或者 head.Next 為 nil
 
 ### [reorder-list](https://leetcode.com/problems/reorder-list/)
 
-> 給定一個單鏈錶  *L*：*L*→*L*→…→*L\_\_n*→*L*
+> 給定一個單鏈結串列  *L*：*L*→*L*→…→*L\_\_n*→*L*
 > 將其重新排列後變為： *L*→*L\_\_n*→*L*→*L\_\_n*→*L*→*L\_\_n*→…
 
-- 思路：找到中點斷開，翻轉後麵部分，然後合並前後兩個鏈錶
+- 思路：找到中點斷開，翻轉後麵部分，然後合並前後兩個鏈結串列
 
 ```Python
 class Solution:
@@ -307,7 +307,7 @@ class Solution:
 
 ### [linked-list-cycle](https://leetcode.com/problems/linked-list-cycle/)
 
-> 給定一個鏈錶，判斷鏈錶中是否有環。
+> 給定一個鏈結串列，判斷鏈結串列中是否有環。
 
 - 思路 1：Hash Table 記錄所有結點判斷重複，空間複雜度 O(n) 非最優，時間複雜度 O(n) 但必然需要 n 次循環
 - 思路 2：快慢指針，快慢指針相同則有環，證明：如果有環每走一步快慢指針距離會減 1，空間複雜度 O(1) 最優，時間複雜度 O(n) 但循環次數小於等於 n
@@ -330,7 +330,7 @@ class Solution:
 
 ### [linked-list-cycle-ii](https://leetcode.com/problems/linked-list-cycle-ii/)
 
-> 給定一個鏈錶，返回鏈錶開始入環的第一個節點。  如果鏈錶無環，則返回  `null`。
+> 給定一個鏈結串列，返回鏈結串列開始入環的第一個節點。  如果鏈結串列無環，則返回  `null`。
 
 - 思路：快慢指針，快慢相遇之後，慢指針回到頭，快慢指針步調一緻一起移動，相遇點即為入環點。
 
@@ -358,7 +358,7 @@ class Solution:
 
 坑點
 
-- 指針比較時直接比較對象，不要用值比較，鏈錶中有可能存在重複值情況
+- 指針比較時直接比較對象，不要用值比較，鏈結串列中有可能存在重複值情況
 - 第一次相交後，快指針需要從下一個節點開始和頭指針一起勻速移動
 
 註意，此題中使用 slow = fast = head 是為了保證最後找環起始點時移動步數相同，但是作為找中點使用時**一般用 fast=head.Next 較多**，因為這樣可以知道中點的上一個節點，可以用來刪除等操作。
@@ -368,9 +368,9 @@ class Solution:
 
 ### [palindrome-linked-list](https://leetcode.com/problems/palindrome-linked-list/)
 
-> 請判斷一個鏈錶是否為回文鏈錶。
+> 請判斷一個鏈結串列是否為回文鏈結串列。
 
-- 思路：O(1) 空間複雜度的解法需要破壞原鏈錶（找中點 -> 反轉後半個 list -> 判斷回文），在實際應用中往往還需要複原（後半個 list 再反轉一次後拚接），操作比較複雜，這裏給出更專案化的做法
+- 思路：O(1) 空間複雜度的解法需要破壞原鏈結串列（找中點 -> 反轉後半個 list -> 判斷回文），在實際應用中往往還需要複原（後半個 list 再反轉一次後拚接），操作比較複雜，這裏給出更專案化的做法
 
 ```Python
 class Solution:
@@ -396,8 +396,8 @@ class Solution:
 
 ### [copy-list-with-random-pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 
-> 給定一個鏈錶，每個節點包含一個額外增加的隨機指針，該指針可以指嚮鏈錶中的任何節點或空節點。
-> 要求返回這個鏈錶的 深拷貝。
+> 給定一個鏈結串列，每個節點包含一個額外增加的隨機指針，該指針可以指嚮鏈結串列中的任何節點或空節點。
+> 要求返回這個鏈結串列的 深拷貝。
 
 - 思路 1：hash table 存儲 random 指針的連接關係
 
@@ -464,16 +464,16 @@ class Solution:
 
 ## 總結
 
-鏈錶必須要掌握的一些點，通過下麵練習題，基本大部分的鏈錶類的題目都是手到擒來~
+鏈結串列必須要掌握的一些點，通過下麵練習題，基本大部分的鏈結串列類的題目都是手到擒來~
 
 - null/nil 異常處理
 - dummy node 啞巴節點
 - 快慢指針
-- 插入一個節點到排序鏈錶
-- 從一個鏈錶中移除一個節點
-- 翻轉鏈錶
-- 合並兩個鏈錶
-- 找到鏈錶的中間節點
+- 插入一個節點到排序鏈結串列
+- 從一個鏈結串列中移除一個節點
+- 翻轉鏈結串列
+- 合並兩個鏈結串列
+- 找到鏈結串列的中間節點
 
 ## 練習
 

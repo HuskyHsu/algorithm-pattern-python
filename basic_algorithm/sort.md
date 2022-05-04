@@ -79,9 +79,9 @@ if __name__ == '__main__':
 
 ### 堆排序
 
-用數組錶示的完美二叉樹 complete binary tree
+用數組錶示的完美二元樹 complete binary tree
 
-> 完美二叉樹 VS 其他二叉樹
+> 完美二元樹 VS 其他二元樹
 
 ![image.png](https://img.fuiboom.com/img/tree_type.png)
 

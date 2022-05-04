@@ -1,6 +1,6 @@
-# 二進製
+# 二進位
 
-## 常見二進製操作
+## 常見二進位操作
 
 ### 基本操作
 
@@ -85,7 +85,7 @@ class Solution:
 
 ### [number-of-1-bits](https://leetcode.com/problems/number-of-1-bits/)
 
-> 編寫一個函數，輸入是一個無符號整數，返回其二進製錶達式中數字位數為 ‘1’  的個數（也被稱為[漢明重量](https://baike.baidu.com/item/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F)）。
+> 編寫一個函數，輸入是一個無符號整數，返回其二進位錶達式中數字位數為 ‘1’  的個數（也被稱為[漢明重量](https://baike.baidu.com/item/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F)）。
 
 ```Python
 class Solution:
@@ -99,7 +99,7 @@ class Solution:
 
 ### [counting-bits](https://leetcode.com/problems/counting-bits/)
 
-> 給定一個非負整數  **num**。對於  0 ≤ i ≤ num  範圍中的每個數字  i ，計算其二進製數中的 1 的數目並將它們作為數組返回。
+> 給定一個非負整數  **num**。對於  0 ≤ i ≤ num  範圍中的每個數字  i ，計算其二進位數中的 1 的數目並將它們作為數組返回。
 
 - 思路：利用上一題的解法容易想到 O(nk) 的解法，k 為位數。但是實際上可以利用動態規劃將複雜度降到 O(n)，想法其實也很簡單，即當前數的 1 個數等於比它少一個 1 的數的結果加 1。下麵給出三種 DP 解法
 
@@ -150,7 +150,7 @@ class Solution:
 
 ### [reverse-bits](https://leetcode.com/problems/reverse-bits/)
 
-> 顛倒給定的 32 位無符號整數的二進製位。
+> 顛倒給定的 32 位無符號整數的二進位位。
 
 思路：簡單想法依次顛倒即可。更高級的想法是考慮到處理超長位元串時可能出現重複的 pattern，此時如果使用 cache 記錄出現過的 pattern 並在重複出現時直接調用結果可以節約時間複雜度，具體可以參考 leetcode 給出的解法。
 

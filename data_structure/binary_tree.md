@@ -1,8 +1,8 @@
-# 二叉樹
+# 二元樹
 
 ## 知識點
 
-### 二叉樹遍曆
+### 二元樹遍曆
 
 **前序遍曆**：**先訪問根節點**，再前序遍曆左子樹，再前序遍曆右子樹
 **中序遍曆**：先中序遍曆左子樹，**再訪問根節點**，再中序遍曆右子樹
@@ -13,9 +13,9 @@
 - 以根訪問順序決定是什麼遍曆
 - 左子樹都是優先右子樹
 
-#### 遞歸模闆
+#### 遞迴模闆
 
-- 遞歸實現二叉樹遍曆非常簡單，不同順序區別僅在於訪問父結點順序
+- 遞迴實現二元樹遍曆非常簡單，不同順序區別僅在於訪問父結點順序
 
 ```Python
 def preorder_rec(root):
@@ -43,7 +43,7 @@ def postorder_rec(root):
     return
 ```
 
-#### [前序非遞歸](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+#### [前序非遞迴](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
 - 本質上是圖的 DFS 的一個特例，因此可以用棧來實現
 
@@ -67,7 +67,7 @@ class Solution:
         return preorder
 ```
 
-#### [中序非遞歸](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+#### [中序非遞迴](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
 ```Python
 class Solution:
@@ -85,7 +85,7 @@ class Solution:
         return inorder
 ```
 
-#### [後序非遞歸](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+#### [後序非遞迴](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 
 ```Python
 class Solution:
@@ -131,7 +131,7 @@ class Solution:
 
 註意點：
 
-> DFS 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞歸返回結果最後合並
+> DFS 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞迴返回結果最後合並
 
 #### [BFS 層次遍曆](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
@@ -169,11 +169,11 @@ class Solution:
 
 - 快速排序
 - 歸並排序
-- 二叉樹相關問題
+- 二元樹相關問題
 
 分治法模闆
 
-- 遞歸返回條件
+- 遞迴返回條件
 - 分段處理
 - 合並結果
 
@@ -181,7 +181,7 @@ class Solution:
 
 ### [maximum-depth-of-binary-tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
-> 給定一個二叉樹，找出其最大深度。
+> 給定一個二元樹，找出其最大深度。
 
 - 思路 1：分治法
 
@@ -222,7 +222,7 @@ class Solution:
 
 ### [balanced-binary-tree](https://leetcode.com/problems/balanced-binary-tree/)
 
-> 給定一個二叉樹，判斷它是否是高度平衡的二叉樹。
+> 給定一個二元樹，判斷它是否是高度平衡的二元樹。
 
 - 思路 1：分治法，左邊平衡 && 右邊平衡 && 左右兩邊高度 <= 1，
 
@@ -280,7 +280,7 @@ class Solution:
 
 ### [binary-tree-maximum-path-sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
-> 給定一個**非空**二叉樹，返回其最大路徑和。
+> 給定一個**非空**二元樹，返回其最大路徑和。
 
 - 思路：分治法。最大路徑的可能情況：左子樹的最大路徑，右子樹的最大路徑，或通過根結點的最大路徑。其中通過根結點的最大路徑值等於以左子樹根結點為端點的最大路徑值加以右子樹根結點為端點的最大路徑值再加上根結點值，這裏還要考慮有負值的情況即負值路徑需要丟棄不取。
 
@@ -307,7 +307,7 @@ class Solution:
 
 ### [lowest-common-ancestor-of-a-binary-tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
-> 給定一個二叉樹, 找到該樹中兩個指定節點的最近公共祖先。
+> 給定一個二元樹, 找到該樹中兩個指定節點的最近公共祖先。
 
 - 思路：分治法，有左子樹的公共祖先或者有右子樹的公共祖先，就返回子樹的祖先，否則返回根節點
 
@@ -338,7 +338,7 @@ class Solution:
 
 ### [binary-tree-zigzag-level-order-traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
-> 給定一個二叉樹，返回其節點值的鋸齒形層次遍曆。Z 字形遍曆
+> 給定一個二元樹，返回其節點值的鋸齒形層次遍曆。Z 字形遍曆
 
 - 思路：在 BFS 叠代模闆上改用雙端隊列控製輸出順序
 
@@ -380,15 +380,15 @@ class Solution:
         return levels
 ```
 
-### 二叉搜索樹應用
+### 二元搜尋樹應用
 
 ### [validate-binary-search-tree](https://leetcode.com/problems/validate-binary-search-tree/)
 
-> 給定一個二叉樹，判斷其是否是一個有效的二叉搜索樹。
+> 給定一個二元樹，判斷其是否是一個有效的二元搜尋樹。
 
 - 思路 1：中序遍曆後檢查輸出是否有序，缺點是如果不平衡無法提前返回結果， 代碼略
 
-- 思路 2：分治法，一個二叉樹為合法的二叉搜索樹當且僅當左右子樹為合法二叉搜索樹且根結點值大於右子樹最小值小於左子樹最大值。缺點是若不用叠代形式實現則無法提前返回，而叠代實現右比較複雜。
+- 思路 2：分治法，一個二元樹為合法的二元搜尋樹當且僅當左右子樹為合法二元搜尋樹且根結點值大於右子樹最小值小於左子樹最大值。缺點是若不用叠代形式實現則無法提前返回，而叠代實現右比較複雜。
 
 ```Python
 class Solution:
@@ -417,7 +417,7 @@ class Solution:
         return valid_min_max(root)[0]
 ```
 
-- 思路 3：利用二叉搜索樹的性質，根結點為左子樹的右邊界，右子樹的左邊界，使用先序遍曆自頂嚮下更新左右子樹的邊界並檢查是否合法，叠代版本實現簡單且可以提前返回結果。
+- 思路 3：利用二元搜尋樹的性質，根結點為左子樹的右邊界，右子樹的左邊界，使用先序遍曆自頂嚮下更新左右子樹的邊界並檢查是否合法，叠代版本實現簡單且可以提前返回結果。
 
 ```Python
 class Solution:
@@ -442,9 +442,9 @@ class Solution:
 
 #### [insert-into-a-binary-search-tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
 
-> 給定二叉搜索樹（BST）的根節點和要插入樹中的值，將值插入二叉搜索樹。 返回插入後二叉搜索樹的根節點。
+> 給定二元搜尋樹（BST）的根節點和要插入樹中的值，將值插入二元搜尋樹。 返回插入後二元搜尋樹的根節點。
 
-- 思路：如果隻是為了完成任務則找到最後一個葉子節點滿足插入條件即可。但此題深挖可以涉及到如何插入並維持平衡二叉搜索樹的問題，並不適合初學者。
+- 思路：如果隻是為了完成任務則找到最後一個葉子節點滿足插入條件即可。但此題深挖可以涉及到如何插入並維持平衡二元搜尋樹的問題，並不適合初學者。
 
 ```Python
 class Solution:
@@ -471,7 +471,7 @@ class Solution:
 
 ## 總結
 
-- 掌握二叉樹遞歸與非遞歸遍曆
+- 掌握二元樹遞迴與非遞迴遍曆
 - 理解 DFS 前序遍曆與分治法
 - 理解 BFS 層次遍曆
 

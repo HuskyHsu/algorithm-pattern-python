@@ -1,4 +1,4 @@
-# 二叉搜索樹
+# 二元搜尋樹
 
 ## 定義
 
@@ -9,7 +9,7 @@
 
 ### [validate-binary-search-tree](https://leetcode.com/problems/validate-binary-search-tree/)
 
-> 驗證二叉搜索樹
+> 驗證二元搜尋樹
 
 ```Python
 class Solution:
@@ -34,7 +34,7 @@ class Solution:
 
 ### [insert-into-a-binary-search-tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
 
-> 給定二叉搜索樹（BST）的根節點和要插入樹中的值，將值插入二叉搜索樹。 返回插入後二叉搜索樹的根節點。 保證原始二叉搜索樹中不存在新值。
+> 給定二元搜尋樹（BST）的根節點和要插入樹中的值，將值插入二元搜尋樹。 返回插入後二元搜尋樹的根節點。 保證原始二元搜尋樹中不存在新值。
 
 ```Python
 class Solution:
@@ -53,7 +53,7 @@ class Solution:
 
 ### [delete-node-in-a-bst](https://leetcode.com/problems/delete-node-in-a-bst/)
 
-> 給定一個二叉搜索樹的根節點 root 和一個值 key，刪除二叉搜索樹中的  key  對應的節點，並保證二叉搜索樹的性質不變。返回二叉搜索樹（有可能被更新）的根節點的引用。
+> 給定一個二元搜尋樹的根節點 root 和一個值 key，刪除二元搜尋樹中的  key  對應的節點，並保證二元搜尋樹的性質不變。返回二元搜尋樹（有可能被更新）的根節點的引用。
 
 ```Python
 class Solution:
@@ -99,7 +99,7 @@ class Solution:
 
 ### [balanced-binary-tree](https://leetcode.com/problems/balanced-binary-tree/)
 
-> 給定一個二叉樹，判斷它是否是高度平衡的二叉樹。
+> 給定一個二元樹，判斷它是否是高度平衡的二元樹。
 
 ```Python
 class Solution:

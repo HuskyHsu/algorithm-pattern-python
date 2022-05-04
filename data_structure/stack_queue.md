@@ -1,4 +1,4 @@
-# 棧和隊列
+# 堆疊與佇列
 
 ## 簡介
 
@@ -113,7 +113,7 @@ class Solution:
 
 ### [binary-tree-inorder-traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
-> 給定一個二叉樹，返回它的*中序*遍曆。
+> 給定一個二元樹，返回它的*中序*遍曆。
 
 - [reference](https://en.wikipedia.org/wiki/Tree_traversal#In-order)
 
@@ -372,7 +372,7 @@ class MyQueue:
 
 ### [binary-tree-level-order-traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
-> 二叉樹的層序遍曆
+> 二元樹的層序遍曆
 
 ```Python
 class Solution:

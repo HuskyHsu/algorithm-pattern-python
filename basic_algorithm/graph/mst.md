@@ -6,7 +6,7 @@
 
 最小危險值為最小生成樹中 0 到 n 路徑上的最大邊權。以此題為例給出最小生成樹的兩種經典算法。
 
-- 算法 1: [Kruskal's algorithm](<[https://en.wikipedia.org/wiki/Kruskal%27s_algorithm](https://en.wikipedia.org/wiki/Kruskal's_algorithm)>)，使用[並查集](../../data_structure/union_find.md)實現。
+- 算法 1: [Kruskal's algorithm](<[https://en.wikipedia.org/wiki/Kruskal%27s_algorithm](https://en.wikipedia.org/wiki/Kruskal's_algorithm)>)，使用[併查集](../../data_structure/union_find.md)實現。
 
 ```Python
 # Kruskal's algorithm
@@ -44,7 +44,7 @@ class Solution:
                 return w
 ```
 
-- 算法 2: [Prim's algorithm](<[https://en.wikipedia.org/wiki/Prim%27s_algorithm](https://en.wikipedia.org/wiki/Prim's_algorithm)>)，使用[優先級隊列 (堆)](../../data_structure/heap.md)實現
+- 算法 2: [Prim's algorithm](<[https://en.wikipedia.org/wiki/Prim%27s_algorithm](https://en.wikipedia.org/wiki/Prim's_algorithm)>)，使用[堆積](../../data_structure/heap.md)實現
 
 ```Python
 # Prim's algorithm

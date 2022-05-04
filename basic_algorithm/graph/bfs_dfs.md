@@ -2,7 +2,7 @@
 
 ### 深度優先搜索模闆
 
-- 先序，遞歸
+- 先序，遞迴
 
 ```Python
 def DFS(x):
@@ -28,7 +28,7 @@ def DFS(x):
     return
 ```
 
-- 後序，遞歸
+- 後序，遞迴
 
 ```Python
 def DFS(x): # used when need to aggregate results from children
