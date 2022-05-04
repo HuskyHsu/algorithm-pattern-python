@@ -1,6 +1,6 @@
 # 說明
 
-本項目為原項目 [algorithm-pattern](https://github.com/greyireland/algorithm-pattern) 的 Python3 語言實現版本，原項目使用 go 語言實現，目前已獲 ![GitHub stars](https://img.shields.io/github/stars/greyireland/algorithm-pattern?style=social)。在原項目基礎上，本項目添加了優先級隊列，併查集，圖相關算法等內容，基本覆蓋了所有基礎數據結構和算法，非常適合找工刷題的同學快速上手。以下為原項目 README，目錄部分增加了本項目的新內容。
+本項目為原項目 [algorithm-pattern](https://github.com/greyireland/algorithm-pattern) 的 Python3 語言實現版本，原項目使用 go 語言實現，目前已獲 ![GitHub stars](https://img.shields.io/github/stars/greyireland/algorithm-pattern?style=social)。在原項目基礎上，本項目添加了優先級佇列，併查集，圖相關算法等內容，基本覆蓋了所有基礎數據結構和算法，非常適合找工刷題的同學快速上手。以下為原項目 README，目錄部分增加了本項目的新內容。
 
 # 算法模板
 
@@ -82,7 +82,7 @@
 
 刷題時間可以合理分配，如果打算準備麵試了，建議前麵兩部分 一個半月 （6 周）時間刷完，最後劍指 offer 半個月刷完，邊刷可以邊投簡曆進行麵試，遇到不會的不用著急，往模板上套就對了，如果麵試官給你提示，那就好好做，不要錯過這大好機會~
 
-> 註意點：如果為了找工作刷題，遇到 hard 的題如果有思路就做，冇思路先跳過，先把基礎打好，再來刷 hard 可能效果會更好~
+> 注意點：如果為了找工作刷題，遇到 hard 的題如果有思路就做，冇思路先跳過，先把基礎打好，再來刷 hard 可能效果會更好~
 
 ## 麵試資源
 

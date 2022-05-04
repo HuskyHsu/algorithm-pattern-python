@@ -56,11 +56,11 @@ Python 自帶的 [bisect](https://docs.python.org/3/library/bisect.html) 庫可�
 
 ## 標準數據結構
 
-#### 棧
+#### 堆疊
 
-Python 中的棧使用自帶的 list 類來實現，可參考[官方文檔](https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks)。
+Python 中的堆疊使用自帶的 list 類來實現，可參考[官方文檔](https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks)。
 
-#### 隊列
+#### 佇列
 
 使用 collections 庫中的 deque 類實現，可參考[官方文檔](https://docs.python.org/3/library/collections.html#collections.deque)。
 

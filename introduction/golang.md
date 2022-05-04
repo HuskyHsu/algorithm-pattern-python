@@ -10,24 +10,24 @@
 
 go 通過切片類比堆疊與佇列
 
-棧
+堆疊
 
 ```go
-// 創建棧
+// 創建堆疊
 stack:=make([]int,0)
 // push壓入
 stack=append(stack,10)
 // pop彈出
 v:=stack[len(stack)-1]
 stack=stack[:len(stack)-1]
-// 檢查棧空
+// 檢查堆疊空
 len(stack)==0
 ```
 
-隊列
+佇列
 
 ```go
-// 創建隊列
+// 創建佇列
 queue:=make([]int,0)
 // enqueue入隊
 queue=append(queue,10)
@@ -38,7 +38,7 @@ queue=queue[1:]
 len(queue)==0
 ```
 
-註意點
+注意點
 
 - 參數傳遞，隻能修改，不能新增或者刪除原始數據
 - 預設 s=s[0:len(s)]，取下限不取上限，數學錶示為：[)
@@ -54,17 +54,17 @@ m:=make(map[string]int)
 m["hello"]=1
 // 刪除k
 delete(m,"hello")
-// 遍曆
+// 遍歷
 for k,v:=range m{
     println(k,v)
 }
 ```
 
-註意點
+注意點
 
 - map 鍵需要可比較，不能為 slice、map、function
 - map 值都有預設值，可以直接操作預設值，如：m[age]++ 值由 0 變為 1
-- 比較兩個 map 需要遍曆，其中的 kv 是否相同，因為有預設值關係，所以需要檢查 val 和 ok 兩個值
+- 比較兩個 map 需要遍歷，其中的 kv 是否相同，因為有預設值關係，所以需要檢查 val 和 ok 兩個值
 
 ### 標準庫
 
@@ -124,6 +124,6 @@ str:=strconv.Itoa()
 
 ```
 
-## 刷題註意點
+## 刷題注意點
 
 - leetcode 中，全局變數不要當做返回值，否則刷題檢查器會報錯

@@ -2,19 +2,19 @@
 
 給一個**有序數組**和目標值，找第一次/最後一次/任何一次出現的索引，時間複雜度 O(logN)。
 
-## 模闆
+## 模板
 
-常用的二分搜尋模闆有如下三種形式：
+常用的二分搜尋模板有如下三種形式：
 
 ![binary_search_template](https://img.fuiboom.com/img/binary_search_template.png)
 
-其中，模闆 1 和 3 是最常用的，幾乎所有二分查找問題都可以用其中之一輕鬆實現。模闆 2 更高級一些，用於解決某些類型的問題。詳細的對比可以參考 Leetcode 上的文章：[二分搜尋模闆](https://leetcode.com/explore/learn/card/binary-search/212/template-analysis/847/)。
+其中，模板 1 和 3 是最常用的，幾乎所有二分查找問題都可以用其中之一輕鬆實現。模板 2 更高級一些，用於解決某些類型的問題。詳細的對比可以參考 Leetcode 上的文章：[二分搜尋模板](https://leetcode.com/explore/learn/card/binary-search/212/template-analysis/847/)。
 
 ### [binary-search](https://leetcode.com/problems/binary-search/)
 
 > 給定一個  n  個元素有序的（升序）整型數組  nums 和一個目標值  target  ，寫一個函數搜索  nums  中的 target，如果目標值存在返回下標，否則返回 -1。
 
-- 模闆 3 的實現
+- 模板 3 的實現
 
 ```Python
 class Solution:
@@ -37,7 +37,7 @@ class Solution:
             return -1
 ```
 
-- 如果是最簡單的二分搜尋，不需要找第一個、最後一個位置，或者是冇有重複元素，可以使用模闆 1，代碼更簡潔。同時，如果搜索失敗，left 是第一個大於 target 的索引，right 是最後一個小於 target 的索引。
+- 如果是最簡單的二分搜尋，不需要找第一個、最後一個位置，或者是冇有重複元素，可以使用模板 1，代碼更簡潔。同時，如果搜索失敗，left 是第一個大於 target 的索引，right 是最後一個小於 target 的索引。
 
 ```Python
 class Solution:
@@ -57,7 +57,7 @@ class Solution:
         return -1
 ```
 
-- 模闆 2 的實現
+- 模板 2 的實現
 
 ```Python
 class Solution:
@@ -84,7 +84,7 @@ class Solution:
 
 > 給定一個包含 n 個整數的排序數組，找出給定目標值 target 的起始和結束位置。如果目標值不在數組中，則返回`[-1, -1]`
 
-- 思路：核心點就是找第一個 target 的索引，和最後一個 target 的索引，所以用兩次二分搜尋分別找第一次和最後一次的位置，下麵是使用模闆 3 的解法
+- 思路：核心點就是找第一個 target 的索引，和最後一個 target 的索引，所以用兩次二分搜尋分別找第一次和最後一次的位置，下麵是使用模板 3 的解法
 
 ```Python
 class Solution:
@@ -124,7 +124,7 @@ class Solution:
         return Range
 ```
 
-- 使用模闆 2 的解法
+- 使用模板 2 的解法
 
 ```Python
 class Solution:
@@ -162,7 +162,7 @@ class Solution:
 
 > 給定一個排序數組和一個目標值，在數組中找到目標值，並返回其索引。如果目標值不存在於數組中，返回它將會被按順序插入的位置。
 
-- 使用模闆 1，若不存在，左邊界為第一個大於目標值的索引（插入位置），右邊界為最後一個小於目標值的索引
+- 使用模板 1，若不存在，左邊界為第一個大於目標值的索引（插入位置），右邊界為最後一個小於目標值的索引
 
 ```Python
 class Solution:

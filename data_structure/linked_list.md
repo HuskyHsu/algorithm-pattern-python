@@ -10,7 +10,7 @@
 - 插入一個節點到排序鏈結串列
 - 從一個鏈結串列中移除一個節點
 - 翻轉鏈結串列
-- 合並兩個鏈結串列
+- 合併兩個鏈結串列
 - 找到鏈結串列的中間節點
 
 ## 常見題型
@@ -72,7 +72,7 @@ class Solution:
         return dummy.next
 ```
 
-註意點
+注意點
 • A->B->C 刪除 B，A.next = C
 • 刪除用一個 Dummy Node 節點輔助（允許頭節點可變）
 • 訪問 X.next 、X.value 一定要保證 X != nil
@@ -149,7 +149,7 @@ class Solution:
 
 ### [merge-two-sorted-lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 
-> 將兩個升序鏈結串列合並為一個新的升序鏈結串列並返回。新鏈結串列是通過拚接給定的兩個鏈結串列的所有節點組成的。
+> 將兩個升序鏈結串列合併為一個新的升序鏈結串列並返回。新鏈結串列是通過拚接給定的兩個鏈結串列的所有節點組成的。
 
 - 思路：通過 dummy node 鏈結串列，連接各個元素
 
@@ -253,7 +253,7 @@ class Solution:
         return self._merge(self.sortList(head), self.sortList(tail))
 ```
 
-註意點
+注意點
 
 - 快慢指針 判斷 fast 及 fast.Next 是否為 nil 值
 - 遞迴 mergeSort 需要斷開中間節點
@@ -264,7 +264,7 @@ class Solution:
 > 給定一個單鏈結串列  *L*：*L*→*L*→…→*L\_\_n*→*L*
 > 將其重新排列後變為： *L*→*L\_\_n*→*L*→*L\_\_n*→*L*→*L\_\_n*→…
 
-- 思路：找到中點斷開，翻轉後麵部分，然後合並前後兩個鏈結串列
+- 思路：找到中點斷開，翻轉後麵部分，然後合併前後兩個鏈結串列
 
 ```Python
 class Solution:
@@ -472,7 +472,7 @@ class Solution:
 - 插入一個節點到排序鏈結串列
 - 從一個鏈結串列中移除一個節點
 - 翻轉鏈結串列
-- 合並兩個鏈結串列
+- 合併兩個鏈結串列
 - 找到鏈結串列的中間節點
 
 ## 練習

@@ -2,21 +2,21 @@
 
 ## 簡介
 
-棧的特點是後入先出
+堆疊的特點是後入先出
 
 ![image.png](https://img.fuiboom.com/img/stack.png)
 
 根據這個特點可以臨時保存一些數據，之後用到依次再彈出來，常用於 DFS 深度搜索
 
-隊列一般常用於 BFS 廣度搜索，類似一層一層的搜索
+佇列一般常用於 BFS 廣度搜索，類似一層一層的搜索
 
-## Stack 棧
+## Stack 堆疊
 
 ### [min-stack](https://leetcode.com/problems/min-stack/)
 
-> 設計一個支援 push，pop，top 操作，並能在常數時間內檢索到最小元素的棧。
+> 設計一個支援 push，pop，top 操作，並能在常數時間內檢索到最小元素的堆疊。
 
-- 思路：用兩個棧實現或插入元組實現，保證當前最小值在棧頂即可
+- 思路：用兩個堆疊實現或插入元組實現，保證當前最小值在堆疊頂即可
 
 ```Python
 class MinStack:
@@ -45,7 +45,7 @@ class MinStack:
 > **波蘭錶達式計算** > **輸入:** ["2", "1", "+", "3", "*"] > **輸出:** 9
 > **解釋:** ((2 + 1) \* 3) = 9
 
-- 思路：通過棧保存原來的元素，遇到錶達式彈出運算，再推入結果，重複這個過程
+- 思路：通過堆疊保存原來的元素，遇到錶達式彈出運算，再推入結果，重複這個過程
 
 ```Python
 class Solution:
@@ -85,7 +85,7 @@ class Solution:
 > s = "3[a2[c]]", 返回 "accaccacc".
 > s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".
 
-- 思路：通過兩個棧進行操作，一個用於存數，另一個用來存字符串
+- 思路：通過兩個堆疊進行操作，一個用於存數，另一個用來存字符串
 
 ```Python
 class Solution:
@@ -113,7 +113,7 @@ class Solution:
 
 ### [binary-tree-inorder-traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
-> 給定一個二元樹，返回它的*中序*遍曆。
+> 給定一個二元樹，返回它的*中序*遍歷。
 
 - [reference](https://en.wikipedia.org/wiki/Tree_traversal#In-order)
 
@@ -200,7 +200,7 @@ class Solution:
 
 High-level problem: number of connected component of graph
 
-- 思路：通過深度搜索遍曆可能性（註意標記已訪問元素）
+- 思路：通過深度搜索遍歷可能性（註意標記已訪問元素）
 
 ```Python
 class Solution:
@@ -261,7 +261,7 @@ class Solution:
         return max_area
 ```
 
-- 思路 2: 設 A(i, j) 為區間 [i, j) 內最大矩形的麵積，k 為 [i, j) 內最矮 bar 的坐標，則 A(i, j) = max((j - i) \* heights[k], A(i, k), A(k+1, j)), 使用分治法進行求解。時間複雜度 O(nlogn)，其中使用簡單遍曆求最小值無法 AC (最壞情況退化到 O(n^2))，使用線段樹優化後勉強 AC。
+- 思路 2: 設 A(i, j) 為區間 [i, j) 內最大矩形的麵積，k 為 [i, j) 內最矮 bar 的坐標，則 A(i, j) = max((j - i) \* heights[k], A(i, k), A(k+1, j)), 使用分治法進行求解。時間複雜度 O(nlogn)，其中使用簡單遍歷求最小值無法 AC (最壞情況退化到 O(n^2))，使用線段樹優化後勉強 AC。
 
 ```Python
 class Solution:
@@ -323,13 +323,13 @@ class Solution:
         return max_area
 ```
 
-## Queue 隊列
+## Queue 佇列
 
 常用於 BFS 寬度優先搜索
 
 ### [implement-queue-using-stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 
-> 使用棧實現隊列
+> 使用堆疊實現佇列
 
 ```Python
 class MyQueue:
@@ -372,7 +372,7 @@ class MyQueue:
 
 ### [binary-tree-level-order-traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
-> 二元樹的層序遍曆
+> 二元樹的層序遍歷
 
 ```Python
 class Solution:
@@ -471,9 +471,9 @@ class Solution:
         return dist
 ```
 
-## 補充：單調棧
+## 補充：單調堆疊
 
-顧名思義，單調棧即是棧中元素有單調性的棧，典型應用為用線性的時間複雜度找左右兩側第一個大於/小於當前元素的位置。
+顧名思義，單調堆疊即是堆疊中元素有單調性的堆疊，典型應用為用線性的時間複雜度找左右兩側第一個大於/小於當前元素的位置。
 
 ### [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
@@ -511,9 +511,9 @@ class Solution:
         return result
 ```
 
-## 補充：單調隊列
+## 補充：單調佇列
 
-單調棧的拓展，可以從數組頭 pop 出舊元素，典型應用是以線性時間獲得區間最大/最小值。
+單調堆疊的拓展，可以從數組頭 pop 出舊元素，典型應用是以線性時間獲得區間最大/最小值。
 
 ### [sliding-window-maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
@@ -577,11 +577,11 @@ class Solution:
 
 ## 總結
 
-- 熟悉棧的使用場景
+- 熟悉堆疊的使用場景
   - 後入先出，保存臨時值
-  - 利用棧 DFS 深度搜索
-- 熟悉隊列的使用場景
-  - 利用隊列 BFS 廣度搜索
+  - 利用堆疊 DFS 深度搜索
+- 熟悉佇列的使用場景
+  - 利用佇列 BFS 廣度搜索
 
 ## 練習
 

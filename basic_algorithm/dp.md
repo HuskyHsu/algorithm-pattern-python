@@ -21,9 +21,9 @@
 
 自頂嚮下的最小路徑和為  11（即，2 + 3 + 5 + 1 = 11）。
 
-使用 DFS（遍曆 或者 分治法）
+使用 DFS（遍歷 或者 分治法）
 
-遍曆
+遍歷
 
 ![image.png](https://img.fuiboom.com/img/dp_triangle.png)
 
@@ -123,7 +123,7 @@ Function(x) {
 1. Two Sequences DP (40%)
 1. Backpack (10%)
 
-> 註意點
+> 注意點
 >
 > - 貪心算法大多題目靠背答案，所以如果能用動態規劃就盡量用動規，不用貪心算法
 

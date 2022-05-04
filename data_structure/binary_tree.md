@@ -2,20 +2,20 @@
 
 ## 知識點
 
-### 二元樹遍曆
+### 二元樹遍歷
 
-**前序遍曆**：**先訪問根節點**，再前序遍曆左子樹，再前序遍曆右子樹
-**中序遍曆**：先中序遍曆左子樹，**再訪問根節點**，再中序遍曆右子樹
-**後序遍曆**：先後序遍曆左子樹，再後序遍曆右子樹，**再訪問根節點**
+**前序遍歷**：**先訪問根節點**，再前序遍歷左子樹，再前序遍歷右子樹
+**中序遍歷**：先中序遍歷左子樹，**再訪問根節點**，再中序遍歷右子樹
+**後序遍歷**：先後序遍歷左子樹，再後序遍歷右子樹，**再訪問根節點**
 
-註意點
+注意點
 
-- 以根訪問順序決定是什麼遍曆
+- 以根訪問順序決定是什麼遍歷
 - 左子樹都是優先右子樹
 
-#### 遞迴模闆
+#### 遞迴模板
 
-- 遞迴實現二元樹遍曆非常簡單，不同順序區別僅在於訪問父結點順序
+- 遞迴實現二元樹遍歷非常簡單，不同順序區別僅在於訪問父結點順序
 
 ```Python
 def preorder_rec(root):
@@ -45,7 +45,7 @@ def postorder_rec(root):
 
 #### [前序非遞迴](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
-- 本質上是圖的 DFS 的一個特例，因此可以用棧來實現
+- 本質上是圖(graph)的 DFS 的一個特例，因此可以用堆疊(堆疊)來實現
 
 ```Python
 class Solution:
@@ -110,11 +110,11 @@ class Solution:
         return postorder
 ```
 
-註意點
+注意點
 
 - 核心就是：根節點必須在右節點彈出之後，再彈出
 
-DFS 深度搜索-從下嚮上（分治法）
+DFS 深度搜索-從下向上（分治法）
 
 ```Python
 class Solution:
@@ -129,11 +129,11 @@ class Solution:
         return [root.val] + left_result + right_result
 ```
 
-註意點：
+注意點：
 
-> DFS 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞迴返回結果最後合並
+> DFS 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞迴返回結果最後合併
 
-#### [BFS 層次遍曆](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+#### [BFS 層次遍歷](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
 ```Python
 class Solution:
@@ -163,7 +163,7 @@ class Solution:
 
 ### 分治法應用
 
-先分別處理局部，再合並結果
+先分別處理局部，再合併結果
 
 適用場景
 
@@ -171,11 +171,11 @@ class Solution:
 - 歸並排序
 - 二元樹相關問題
 
-分治法模闆
+分治法模板
 
 - 遞迴返回條件
 - 分段處理
-- 合並結果
+- 合併結果
 
 ## 常見題目示例
 
@@ -195,7 +195,7 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 ```
 
-- 思路 2：層序遍曆
+- 思路 2：層序遍歷
 
 ```Python
 class Solution:
@@ -245,7 +245,7 @@ class Solution:
         return out
 ```
 
-- 思路 2：使用後序遍曆實現分治法的叠代版本
+- 思路 2：使用後序遍歷實現分治法的叠代版本
 
 ```Python
 class Solution:
@@ -338,9 +338,9 @@ class Solution:
 
 ### [binary-tree-zigzag-level-order-traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
-> 給定一個二元樹，返回其節點值的鋸齒形層次遍曆。Z 字形遍曆
+> 給定一個二元樹，返回其節點值的鋸齒形層次遍歷。Z 字形遍歷
 
-- 思路：在 BFS 叠代模闆上改用雙端隊列控製輸出順序
+- 思路：在 BFS 叠代模板上改用雙端佇列控製輸出順序
 
 ```Python
 class Solution:
@@ -386,7 +386,7 @@ class Solution:
 
 > 給定一個二元樹，判斷其是否是一個有效的二元搜尋樹。
 
-- 思路 1：中序遍曆後檢查輸出是否有序，缺點是如果不平衡無法提前返回結果， 代碼略
+- 思路 1：中序遍歷後檢查輸出是否有序，缺點是如果不平衡無法提前返回結果， 代碼略
 
 - 思路 2：分治法，一個二元樹為合法的二元搜尋樹當且僅當左右子樹為合法二元搜尋樹且根結點值大於右子樹最小值小於左子樹最大值。缺點是若不用叠代形式實現則無法提前返回，而叠代實現右比較複雜。
 
@@ -417,7 +417,7 @@ class Solution:
         return valid_min_max(root)[0]
 ```
 
-- 思路 3：利用二元搜尋樹的性質，根結點為左子樹的右邊界，右子樹的左邊界，使用先序遍曆自頂嚮下更新左右子樹的邊界並檢查是否合法，叠代版本實現簡單且可以提前返回結果。
+- 思路 3：利用二元搜尋樹的性質，根結點為左子樹的右邊界，右子樹的左邊界，使用先序遍歷自頂嚮下更新左右子樹的邊界並檢查是否合法，叠代版本實現簡單且可以提前返回結果。
 
 ```Python
 class Solution:
@@ -471,9 +471,9 @@ class Solution:
 
 ## 總結
 
-- 掌握二元樹遞迴與非遞迴遍曆
-- 理解 DFS 前序遍曆與分治法
-- 理解 BFS 層次遍曆
+- 掌握二元樹遞迴與非遞迴遍歷
+- 理解 DFS 前序遍歷與分治法
+- 理解 BFS 層次遍歷
 
 ## 練習
 

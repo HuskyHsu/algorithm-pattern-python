@@ -1,6 +1,6 @@
 # 併查集
 
-用於處理不相交集合 (disjoint sets) 合並及查找的問題，典型應用有連通分量檢測，環路檢測等。原理和複雜度分析等可以參考[維基百科](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)。
+用於處理不相交集合 (disjoint sets) 合併及查找的問題，典型應用有連通分量檢測，環路檢測等。原理和複雜度分析等可以參考[維基百科](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)。
 
 ### [redundant-connection](https://leetcode.com/problems/redundant-connection/)
 
