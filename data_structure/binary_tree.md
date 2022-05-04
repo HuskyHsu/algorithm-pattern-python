@@ -13,7 +13,7 @@
 - 以根訪問順序決定是什麼遍歷
 - 左子樹都是優先右子樹
 
-#### 遞迴模板
+#### 遞迴樣板
 
 - 遞迴實現二元樹遍歷非常簡單，不同順序區別僅在於訪問父結點順序
 
@@ -45,7 +45,7 @@ def postorder_rec(root):
 
 #### [前序非遞迴](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
-- 本質上是圖(graph)的 DFS 的一個特例，因此可以用堆疊(堆疊)來實現
+- 本質上是圖(graph)的 DFS 的一個特例，因此可以用堆疊(stack)來實現
 
 ```Python
 class Solution:
@@ -171,7 +171,7 @@ class Solution:
 - 歸並排序
 - 二元樹相關問題
 
-分治法模板
+分治法樣板
 
 - 遞迴返回條件
 - 分段處理
@@ -340,7 +340,7 @@ class Solution:
 
 > 給定一個二元樹，返回其節點值的鋸齒形層次遍歷。Z 字形遍歷
 
-- 思路：在 BFS 叠代模板上改用雙端佇列控製輸出順序
+- 思路：在 BFS 叠代樣板上改用雙端佇列控製輸出順序
 
 ```Python
 class Solution:

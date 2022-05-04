@@ -1,6 +1,6 @@
 # 深度優先搜索，廣度優先搜索
 
-### 深度優先搜索模板
+### 深度優先搜索樣板
 
 - 先序，遞迴
 
@@ -40,7 +40,7 @@ def DFS(x): # used when need to aggregate results from children
     return
 ```
 
-### 廣度優先搜索模板
+### 廣度優先搜索樣板
 
 相對於 dfs 可能收斂更慢，但是可以用來找不帶權的最短路徑
 

@@ -261,7 +261,7 @@ class Solution:
 
 ### [network-delay-time](https://leetcode.com/problems/network-delay-time/)
 
-- 標準的單源最短路徑問題，使用樸素的的 Dijikstra 算法即可，可以當成模板使用。
+- 標準的單源最短路徑問題，使用樸素的的 Dijikstra 算法即可，可以當成樣板使用。
 
 ```Python
 class Solution:
