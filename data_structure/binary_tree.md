@@ -114,7 +114,7 @@ class Solution:
 
 - 核心就是：根節點必須在右節點彈出之後，再彈出
 
-DFS 深度搜索-從下向上（分治法）
+DFS(Depth-First Search) 深度搜索-從下向上（分治法）
 
 ```Python
 class Solution:
@@ -131,7 +131,7 @@ class Solution:
 
 注意點：
 
-> DFS 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞迴返回結果最後合併
+> DFS(Depth-First Search) 深度搜索（從上到下） 和分治法區別：前者一般將最終結果通過指針參數傳入，後者一般遞迴返回結果最後合併
 
 #### [BFS 層次遍歷](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 

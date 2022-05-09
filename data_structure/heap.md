@@ -94,7 +94,7 @@ Heap 可以高效地取出或更新當前池中優先級最高的元素，因此
 
 ### [maximum-performance-of-a-team](https://leetcode.com/problems/maximum-performance-of-a-team/)
 
-> 公司有 n 個專案師，給兩個數組 speed 和 efficiency，其中 speed[i] 和 efficiency[i] 分別代錶第 i 位專案師的速度和效率。請你返回由最多 k 個專案師組成的團隊的最大錶現值。錶現值的定義為：一個團隊中所有專案師速度的和乘以他們效率值中的最小值。
+> 公司有 n 個專案師，給兩個數組 speed 和 efficiency，其中 speed[i] 和 efficiency[i] 分別代錶第 i 位專案師的速度和效率。請你返回由最多 k 個專案師組成的團隊的最大表現值。表現值的定義為：一個團隊中所有專案師速度的和乘以他們效率值中的最小值。
 
 - [See my review here.](<https://leetcode.com/problems/maximum-performance-of-a-team/discuss/741822/Met-this-problem-in-my-interview!!!-(Python3-greedy-with-heap)>) [或者這裏(中文)](https://leetcode.com/problems/maximum-performance-of-a-team/solution/greedy-with-min-heap-lai-zi-zhen-shi-mian-shi-de-j/)
 
