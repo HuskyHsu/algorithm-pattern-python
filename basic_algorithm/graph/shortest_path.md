@@ -147,7 +147,7 @@ class Solution:
 
 ### [cheapest-flights-within-k-stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 
-- 在標準的單源最短路徑問題上限製了路徑的邊數，因此需要同時維護當前 SPT 內每個結點最短路徑的邊數，當遇到邊數更小的路徑 (邊權和可以更大) 時結點需要重新入堆，以更新後繼在邊數上限內冇達到的結點。
+- 在標準的單源最短路徑問題上限製了路徑的邊數，因此需要同時維護當前 SPT 內每個結點最短路徑的邊數，當遇到邊數更小的路徑 (邊權和可以更大) 時結點需要重新入堆，以更新後繼在邊數上限內有達到的結點。
 
 ```Python
 class Solution:

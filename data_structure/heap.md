@@ -35,7 +35,7 @@ class KthLargest:
 
 > 給定一個 n x n 矩陣，其中每行和每列元素均按升序排序，找到矩陣中第 k 小的元素。
 
-- 此題使用 heap 來做並不是最優做法，相當於 N 個 sorted list 裏找第 k 個最小，列有序的條件冇有充分利用，但是卻是比較容易想且比較通用的做法。
+- 此題使用 heap 來做並不是最優做法，相當於 N 個 sorted list 裏找第 k 個最小，列有序的條件有有充分利用，但是卻是比較容易想且比較通用的做法。
 
 ```Python
 class Solution:
@@ -289,7 +289,7 @@ class Solution:
 
 ### [cheapest-flights-within-k-stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
 
-- 在標準的單源最短路徑問題上限製了路徑的邊數，因此需要同時維護當前 SPT 內每個結點最短路徑的邊數，當遇到邊數更小的路徑 (邊權和可以更大) 時結點需要重新入堆，以更新後繼在邊數上限內冇達到的結點。
+- 在標準的單源最短路徑問題上限製了路徑的邊數，因此需要同時維護當前 SPT 內每個結點最短路徑的邊數，當遇到邊數更小的路徑 (邊權和可以更大) 時結點需要重新入堆，以更新後繼在邊數上限內有達到的結點。
 
 ```Python
 class Solution:

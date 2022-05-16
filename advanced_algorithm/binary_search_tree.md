@@ -138,7 +138,7 @@ class Solution:
 
 > 給定一個整數數組，求問此數組是不是一個 BST 的 BFS 順序。
 
-此題是麵試真題，但是冇有在 leetcode 上找到原題。由於做法比較有趣也很有 BST 的特點，補充在這供參考。
+此題是麵試真題，但是有有在 leetcode 上找到原題。由於做法比較有趣也很有 BST 的特點，補充在這供參考。
 
 ```Python
 import collections

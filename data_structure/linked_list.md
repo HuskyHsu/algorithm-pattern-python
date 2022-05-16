@@ -5,8 +5,8 @@
 鏈結串列相關的核心點
 
 - null/nil 異常處理
-- dummy node 啞巴節點
-- 快慢指針
+- dummy node (啞節點)
+- Hare & Tortoise (龜兔賽跑演算法)
 - 插入一個節點到排序鏈結串列
 - 從一個鏈結串列中移除一個節點
 - 翻轉鏈結串列
@@ -17,7 +17,7 @@
 
 ### [remove-duplicates-from-sorted-list](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
-> 給定一個排序鏈結串列，刪除所有重複的元素，使得每個元素隻出現一次。
+> 給定一個排序鏈結串列，刪除所有重複的元素，使得每個元素只出現一次。
 
 ```Python
 class Solution:
@@ -39,7 +39,7 @@ class Solution:
 
 ### [remove-duplicates-from-sorted-list-ii](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 
-> 給定一個排序鏈結串列，刪除所有含有重複數字的節點，隻保留原始鏈結串列中   冇有重複出現的數字。
+> 給定一個排序鏈結串列，刪除所有含有重複數字的節點，隻保留原始鏈結串列中有有重複出現的數字。
 
 - 思路：鏈結串列頭結點可能被刪除，所以用 dummy node 輔助刪除
 
@@ -202,9 +202,9 @@ class Solution:
 	return s.next
 ```
 
-啞巴節點使用場景
+啞節點使用場景
 
-> 當頭節點不確定的時候，使用啞巴節點
+> 當頭節點不確定的時候，使用啞節點
 
 ### [sort-list](https://leetcode.com/problems/sort-list/)
 
@@ -255,7 +255,7 @@ class Solution:
 
 注意點
 
-- 快慢指針 判斷 fast 及 fast.Next 是否為 nil 值
+- Hare & Tortoise (龜兔賽跑演算法) 判斷 fast 及 fast.Next 是否為 nil 值
 - 遞迴 mergeSort 需要斷開中間節點
 - 遞迴返回條件為 head 為 nil 或者 head.Next 為 nil
 
@@ -310,7 +310,7 @@ class Solution:
 > 給定一個鏈結串列，判斷鏈結串列中是否有環。
 
 - 思路 1：Hash Table 記錄所有結點判斷重複，空間複雜度 O(n) 非最優，時間複雜度 O(n) 但必然需要 n 次循環
-- 思路 2：快慢指針，快慢指針相同則有環，證明：如果有環每走一步快慢指針距離會減 1，空間複雜度 O(1) 最優，時間複雜度 O(n) 但循環次數小於等於 n
+- 思路 2：Hare & Tortoise (龜兔賽跑演算法)，Hare & Tortoise 相同則有環，證明：如果有環每走一步 Hare & Tortoise 距離會減 1，空間複雜度 O(1) 最優，時間複雜度 O(n) 但循環次數小於等於 n
   ![fast_slow_linked_list](https://img.fuiboom.com/img/fast_slow_linked_list.png)
 
 ```Python
@@ -332,7 +332,7 @@ class Solution:
 
 > 給定一個鏈結串列，返回鏈結串列開始入環的第一個節點。  如果鏈結串列無環，則返回  `null`。
 
-- 思路：快慢指針，快慢相遇之後，慢指針回到頭，快慢指針步調一緻一起移動，相遇點即為入環點。
+- 思路：Hare & Tortoise (龜兔賽跑演算法)，快慢相遇之後，慢指針回到頭，Hare & Tortoise 步調一緻一起移動，相遇點即為入環點。
 
 ![cycled_linked_list](https://img.fuiboom.com/img/cycled_linked_list.png)
 
@@ -396,8 +396,8 @@ class Solution:
 
 ### [copy-list-with-random-pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 
-> 給定一個鏈結串列，每個節點包含一個額外增加的隨機指針，該指針可以指嚮鏈結串列中的任何節點或空節點。
-> 要求返回這個鏈結串列的 深拷貝。
+> 給定一個鏈結串列，每個節點包含一個額外增加的隨機指針，該指針可以指向鏈結串列中的任何節點或空節點。
+> 要求返回這個鏈結串列的深拷貝。
 
 - 思路 1：hash table 存儲 random 指針的連接關係
 
@@ -467,8 +467,8 @@ class Solution:
 鏈結串列必須要掌握的一些點，通過下麵練習題，基本大部分的鏈結串列類的題目都是手到擒來~
 
 - null/nil 異常處理
-- dummy node 啞巴節點
-- 快慢指針
+- dummy node (啞節點)
+- Hare & Tortoise (龜兔賽跑演算法)
 - 插入一個節點到排序鏈結串列
 - 從一個鏈結串列中移除一個節點
 - 翻轉鏈結串列

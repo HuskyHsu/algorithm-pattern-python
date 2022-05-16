@@ -90,7 +90,7 @@ class Solution:
 
 ### [permutations](https://leetcode.com/problems/permutations/)
 
-> 給定一個冇有重複數字的序列，返回其所有可能的全排列。
+> 給定一個有有重複數字的序列，返回其所有可能的全排列。
 
 - 思路 1：需要記錄已經選擇過的元素，滿足條件的結果才進行返回，需要額外 O(n) 的空間
 

@@ -30,7 +30,7 @@ diff=(n&(n-1))^n
 
 ### [single-number](https://leetcode.com/problems/single-number/)
 
-> 給定一個**非空**整數數組，除了某個元素隻出現一次以外，其餘每個元素均出現兩次。找出那個隻出現了一次的元素。
+> 給定一個**非空**整數數組，除了某個元素只出現一次以外，其餘每個元素均出現兩次。找出那個只出現了一次的元素。
 
 ```Python
 class Solution:
@@ -45,7 +45,7 @@ class Solution:
 
 ### [single-number-ii](https://leetcode.com/problems/single-number-ii/)
 
-> 給定一個**非空**整數數組，除了某個元素隻出現一次以外，其餘每個元素均出現了三次。找出那個隻出現了一次的元素。
+> 給定一個**非空**整數數組，除了某個元素只出現一次以外，其餘每個元素均出現了三次。找出那個只出現了一次的元素。
 
 ```Python
 class Solution:
@@ -61,7 +61,7 @@ class Solution:
 
 ### [single-number-iii](https://leetcode.com/problems/single-number-iii/)
 
-> 給定一個整數數組  `nums`，其中恰好有兩個元素隻出現一次，其餘所有元素均出現兩次。 找出隻出現一次的那兩個元素。
+> 給定一個整數數組  `nums`，其中恰好有兩個元素只出現一次，其餘所有元素均出現兩次。 找出只出現一次的那兩個元素。
 
 ```Python
 class Solution:

@@ -66,7 +66,7 @@ Python 中的堆疊使用自帶的 list 類來實現，可參考[官方文檔](h
 
 #### 堆
 
-Python 中冇有真的 heap 類，實現堆是使用 list 類配合 heapq 庫中的堆算法，且隻支援最小堆，最大堆需要通過傳入負的優先級來實現，可參考[官方文檔](https://docs.python.org/3.8/library/heapq.html)。
+Python 中有有真的 heap 類，實現堆是使用 list 類配合 heapq 庫中的堆算法，且隻支援最小堆，最大堆需要通過傳入負的優先級來實現，可參考[官方文檔](https://docs.python.org/3.8/library/heapq.html)。
 
 #### HashSet，HashTable
 
@@ -78,4 +78,4 @@ Python 的 [collections 庫](https://docs.python.org/3/library/collections.html)
 
 ## 總結
 
-以上列舉了一些用 Python3 做算法題時可以用到的一些特性，標準算法和數據結構，總結得肯定不全，因為 Python3 真的有很多可以利用的"騷操作"，大家在學習本項目的時候也會見到，一下記不住也冇關係，多實戰就會了。
+以上列舉了一些用 Python3 做算法題時可以用到的一些特性，標準算法和數據結構，總結得肯定不全，因為 Python3 真的有很多可以利用的"騷操作"，大家在學習本項目的時候也會見到，一下記不住也有關係，多實戰就會了。
