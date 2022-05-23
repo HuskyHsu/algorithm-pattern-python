@@ -181,7 +181,7 @@ class Solution:
 
 - 思路：將大於 x 的節點，放到另外一個鏈結串列，最後連接這兩個鏈結串列
 
-```go
+```python
 class Solution:
     def partition(self, head: ListNode, x: int) -> ListNode:
 
