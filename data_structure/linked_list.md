@@ -261,8 +261,8 @@ class Solution:
 
 ### [reorder-list](https://leetcode.com/problems/reorder-list/)
 
-> 給定一個單鏈結串列  *L*：*L*→*L*→…→*L\_\_n*→*L*
-> 將其重新排列後變為： *L*→*L\_\_n*→*L*→*L\_\_n*→*L*→*L\_\_n*→…
+> 給定一個單鏈結串列  `L0 → L1 → … → Ln - 1 → Ln`<br>
+> 將其重新排列後變為： `L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …`
 
 - 思路：找到中點斷開，翻轉後面部分，然後合併前後兩個鏈結串列
 
