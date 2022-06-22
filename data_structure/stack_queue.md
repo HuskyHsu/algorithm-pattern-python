@@ -80,9 +80,9 @@ class Solution:
 
 ### [decode-string](https://leetcode.com/problems/decode-string/)
 
-> 給定一個經過編碼的字符串，返回它解碼後的字符串。
-> s = "3[a]2[bc]", 返回 "aaabcbc".
-> s = "3[a2[c]]", 返回 "accaccacc".
+> 給定一個經過編碼的字符串，返回它解碼後的字符串。<br>
+> s = "3[a]2[bc]", 返回 "aaabcbc".<br>
+> s = "3[a2[c]]", 返回 "accaccacc".<br>
 > s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".
 
 - 思路：通過兩個堆疊進行操作，一個用於存數，另一個用來存字符串
@@ -138,7 +138,7 @@ class Solution:
 
 ### [clone-graph](https://leetcode.com/problems/clone-graph/)
 
-> 給你無嚮連通圖中一個節點的引用，請你返回該圖的深拷貝（克隆）。
+> 給你無向連通圖中一個節點的引用，請你返回該圖的深拷貝（克隆）。
 
 - BFS
 
