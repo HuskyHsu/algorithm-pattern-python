@@ -196,7 +196,7 @@ class Solution:
 
 ### [number-of-islands](https://leetcode.com/problems/number-of-islands/)
 
-> 給定一個由  '1'（陸地）和 '0'（水）組成的的二維網格，計算島嶼的數量。一個島被水包圍，並且它是通過水準方嚮或垂直方嚮上相鄰的陸地連接而成的。你可以假設網格的四個邊均被水包圍。
+> 給定一個由  '1'（陸地）和 '0'（水）組成的的二維網格，計算島嶼的數量。一個島被水包圍，並且它是通過水準方向或垂直方向上相鄰的陸地連接而成的。你可以假設網格的四個邊均被水包圍。
 
 High-level problem: number of connected component of graph
 

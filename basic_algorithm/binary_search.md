@@ -238,7 +238,7 @@ class Solution:
 
         while l < r:
             mid = l + (r - l) // 2
-            if nums[mid] > nums[r]: # 數組有重複時，若 nums[l] == nums[mid] == nums[r]，無法判斷移動方嚮
+            if nums[mid] > nums[r]: # 數組有重複時，若 nums[l] == nums[mid] == nums[r]，無法判斷移動方向
                 l = mid + 1
             else:
                 r = mid
